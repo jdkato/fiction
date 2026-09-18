@@ -21,7 +21,10 @@ Works on [Markdown](https://docs.vale.sh/formats/markdown),
 
 ## Install
 
-Requires Vale 3.23.0 or later.
+Requires Vale 3.23.0 or later. The rules that grade a sentence or measure
+a chapter, `Hemingway.HardSentence`, `Hemingway.VeryHardSentence`,
+`Hemingway.ChapterGrade`, and `ChapterLength`, need a Vale built from the
+`v3` branch until the next release.
 
 ```ini
 StylesPath = styles
@@ -75,6 +78,8 @@ tense.
 | `Marks` | `"` and `“`, `'` and `’`, `...` and `…`, `--` and `—` in the same file |
 | `Waking` | `woke up`, `the alarm went off` in the paragraph after a heading |
 | `Cliffhanger` | a chapter whose last paragraph ends on `?` |
+| `ChapterLength` | a chapter under 1,000 words or over 6,000 |
+| `Redundancy` | `nodded his head`, `shrugged her shoulders`, `thought to himself` |
 
 The rules about speech, `StiffDialogue`, `AsYouKnow`, and `Monologue`,
 read only the text between quotation marks. The rules about narration,
@@ -148,19 +153,18 @@ yours.
 | `PassiveVoice` | Blue: passive voice | `was opened by`, `were being followed` |
 | `Qualifiers` | Blue: qualifiers | `perhaps`, `sort of`, `I think`, `it seemed` |
 | `Simpler` | Purple: words with simpler alternatives | `utilize`, `commence`, `in order to`, `subsequently` |
-| `HardSentence` | Yellow: hard to read | a sentence of 20 to 27 words |
-| `VeryHardSentence` | Red: very hard to read | a sentence of 28 words or more |
+| `HardSentence` | Yellow: hard to read | a sentence of 14 words or more at grade 10 to 13 |
+| `VeryHardSentence` | Red: very hard to read | a sentence of 14 words or more at grade 14 or higher |
 | `Grade` | Readability | a file that reads above grade 9 |
+| `ChapterGrade` | Readability | a chapter that reads above grade 9 |
 
-The editor grades each sentence by its letters per word and its words, and
-calls a sentence of fourteen words or more hard at grade 10 and very hard
-at grade 14. A pattern can count words but not letters, so the two sentence
-rules draw the same lines by length alone: at the average of about 4.7
-letters a word, grade 10 falls near twenty words and grade 14 near
-twenty-eight. `Grade` is the editor's Automated Readability Index over the
-whole file, against its default target of grade 9. The word lists are the
-package's own, except `Simpler`, which takes its pairs from the United
-States government's plain-language guidelines.
+The grade is the editor's: the Automated Readability Index, from letters
+per word and words per sentence. The two sentence rules take it one
+sentence at a time, with the editor's floor of fourteen words, and `Grade`
+takes it over the whole file, against the editor's default target of grade
+9, and `ChapterGrade` takes it over each level-two section. The word lists
+are the package's own, except `Simpler`, which takes its pairs from the
+United States government's plain-language guidelines.
 
 Every rule file starts with a comment quoting or paraphrasing the passage it
 comes from and links to the source.
@@ -186,6 +190,14 @@ Leonard.Dialect[max] = 50
 Fiction.Beats[max] = 40
 Fiction.Monologue[max] = 120
 Fiction.DialoguePunctuation = NO
+```
+
+A measured rule's `condition` is one too, and `result` in it is the
+measurement, so both ends of a band can move:
+
+```ini
+Fiction.ChapterLength[condition] = "< 500 || result > 8000"
+Hemingway.Grade[condition] = "> 7"
 ```
 
 So is a scope. `Cliffhanger` reads the last paragraph of each level-two
@@ -224,9 +236,9 @@ both sides.
 
 **Openings and endings.** `Leonard.Weather` reads the paragraph after the
 level-one heading, and `Waking` the paragraph after any heading.
-`Cliffhanger` reads the last paragraph of each level-two section. A file
-with no heading, and any plain-text file, has no opening or chapter to
-check.
+`Cliffhanger` reads the last paragraph of each level-two section, and
+`ChapterLength` and `Hemingway.ChapterGrade` the whole of it. A file with
+no heading, and any plain-text file, has no opening or chapter to check.
 
 **Counts.** `Leonard.Exclamations`, `Leonard.Dialect`, and `Beats` count
 per file. Leonard's budget is two or three exclamation points per 100,000
@@ -238,7 +250,7 @@ use.
 
 **Sentences.** `HardSentence` and `VeryHardSentence` read every sentence,
 speech included, and a sentence gets one note or the other, never both.
-Their limits are the editor's, and are not parameters; `Grade` reads the
+The grades are the editor's, and are not parameters; `Grade` reads the
 whole file and fires once.
 
 **British punctuation.** `DialoguePunctuation` wants the comma and period

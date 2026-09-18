@@ -22,10 +22,10 @@ There were a great number of dead leaves lying on the ground. He was not honest,
 
 She woke up to the sound of the alarm. "As you know, Bob, I am not going, and I do not care," she said. "Hello," he smiled. He nodded, "Fine."
 
-Walking to the door, she opened it. A tall, dark, handsome stranger stood there. She walked toward the door and then towards the window, and said “yes”. She walks to the door and I believed her.
+Walking to the door, she opened it. He nodded his head. A tall, dark, handsome stranger stood there. She walked toward the door and then towards the window, and said “yes”. She walks to the door and I believed her.
 
 He had no axe to grind, in view of the fact that he had utilized a not unsmall cul-de-sac. She nodded. He shrugged. She sighed. He smiled. She grinned. He frowned. She winked. He blinked. She swallowed. He exhaled. She shook her head.
 
-Perhaps he was followed, and he walked slowly. He walked down to the harbor in the last of the light, past the boats and the sheds and the men who said nothing, and he utilized the path in order to reach the water before the tide turned. He walked down to the harbor in the last of the light, past the boats and the sheds and the men who said nothing.
+Perhaps he was followed, and he walked slowly. He walked down to the harbor in the last of the light, past the boats and the sheds and the men who said nothing, and he utilized the path in order to reach the water before the tide turned. He walked down to the harbor in the last of the light, past the boats and the sheds and the men who had nothing to say to him, and he did not look at any of them.
 
 "I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again," he said. Was the box empty?

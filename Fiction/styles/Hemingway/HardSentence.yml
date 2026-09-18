@@ -1,27 +1,29 @@
 # The Hemingway Editor's yellow: a sentence "more complex than your target
-# readability score." The editor grades each sentence by its letters per
-# word and its words, and a sentence of fourteen or more words that grades
-# 10 through 13 is hard. A pattern can count words but not letters, so
-# this is the same line drawn by length alone: at the average of about
-# 4.7 letters a word, the grade crosses 10 near twenty words and 14 near
-# twenty-eight. Twenty to twenty-seven words is hard; VeryHardSentence
-# takes the rest.
-extends: existence
-message: "Hard to read: 20 or more words in one sentence. Split it, or trim it."
+# readability score." The editor grades each sentence by the Automated
+# Readability Index, 4.71 times the letters per word, plus half the words,
+# less 21.43, rounded, and a sentence of fourteen words or more that grades
+# 10 through 13 is hard. The block is one sentence, so the words-per-
+# sentence term is the word count. VeryHardSentence takes grade 14 and up.
+extends: metric
+message: "Hard to read: grade %s. Split it, or trim it."
 link: https://hemingwayapp.com/help/docs/highlighted-issues
 level: suggestion
 scope: sentence
-nonword: true
-tokens:
-  - '^\W*(?:[\w''’-]+\W+){19,26}[\w''’-]+\W*$'
+formula: |
+  math.floor((4.71 * (characters / words)) + (0.5 * words) - 21.43 + 0.5)
+condition: ">= 10 && result < 14 && words >= 14"
 
 tests:
   - name: fires
     input: |
-      He walked down to the harbor in the last of the light, past the boats and the sheds and the men who said nothing. The tide was out.
+      He walked down to the harbor in the last of the light, past the boats and the sheds and the men who had nothing to say to him, and he did not look at any of them. The tide was out.
     want: |
-      1:1:Hemingway.HardSentence:Hard to read: 20 or more words in one sentence. Split it, or trim it.
+      1:1:Hemingway.HardSentence:Hard to read: grade 13.00. Split it, or trim it.
   - name: clean
     input: |
-      He walked down to the harbor in the last of the light, past the boats and the sheds. The men had nothing to say to him. The tide was out.
+      He walked down to the harbor in the last of the light, past the boats and the sheds and the men who said nothing. The tide was out.
+    want: ""
+  - name: short but dense
+    input: |
+      Notwithstanding the aforementioned considerations, the administration's reorganization necessitated comprehensive reevaluation.
     want: ""

@@ -34,28 +34,28 @@ fixtures/story.txt:11:41:Fiction.AsYouKnow:'As you know' is exposition: the list
 fixtures/story.txt:11:59:Fiction.StiffDialogue:Contract 'I am' in speech, unless the character is being formal.
 fixtures/story.txt:11:95:Fiction.ActionTag:'he smiled' can't speak a line. End the speech with a period and let the beat stand.
 fixtures/story.txt:11:106:Fiction.Participle:The sentence opens on 'Walking'. Was the subject doing both at once?
-fixtures/story.txt:11:144:Fiction.Adjectives:Three adjectives on one noun. Keep the one that does the work.
-fixtures/story.txt:11:223:Fiction.Variants:'towards' beside its other form. Pick one and keep it.
-fixtures/story.txt:11:252:Fiction.Marks:'“' beside its other form. Use one kind of mark throughout.
-fixtures/story.txt:11:256:Fiction.DialoguePunctuation:Move the ” inside the closing quotation mark.
-fixtures/story.txt:11:263:Narration.PresentTense:Present tense in narration: 'walks'.
-fixtures/story.txt:11:285:Narration.FirstPerson:First person in narration: 'I'.
-fixtures/story.txt:11:287:Palahniuk.ThoughtVerbs:Unpack the thought verb 'believed': show what the character does instead.
-fixtures/story.txt:11:301:Hemingway.HardSentence:Hard to read: 20 or more words in one sentence. Split it, or trim it.
-fixtures/story.txt:11:308:Orwell.Metaphors:Dying metaphor: 'no axe to grind' (Rule 1).
-fixtures/story.txt:11:325:Hemingway.Simpler:Use 'since' for 'in view of'.
-fixtures/story.txt:11:325:Orwell.FalseLimbs:Verbal false limb: 'in view of'. Cut it (Rule 3).
-fixtures/story.txt:11:336:Orwell.FalseLimbs:Verbal false limb: 'the fact that'. Cut it (Rule 3).
-fixtures/story.txt:11:336:Strunk.FactThat:Revise 'the fact that' out of the sentence (Rule 13).
-fixtures/story.txt:11:357:Hemingway.Simpler:Use 'use' for 'utilized'.
-fixtures/story.txt:11:357:Orwell.Pretentious:Pretentious diction: 'utilized'. Use the plain word (Rule 2).
-fixtures/story.txt:11:368:Orwell.NotUn:Cure the 'not un-' formation: 'not unsmall' (Rule 3).
-fixtures/story.txt:11:380:Orwell.Foreign:Foreign phrase: 'cul-de-sac'. Say it in English (Rule 5).
+fixtures/story.txt:11:145:Fiction.Redundancy:Redundant: 'nodded his head'. The verb already says it.
+fixtures/story.txt:11:164:Fiction.Adjectives:Three adjectives on one noun. Keep the one that does the work.
+fixtures/story.txt:11:243:Fiction.Variants:'towards' beside its other form. Pick one and keep it.
+fixtures/story.txt:11:272:Fiction.Marks:'“' beside its other form. Use one kind of mark throughout.
+fixtures/story.txt:11:276:Fiction.DialoguePunctuation:Move the ” inside the closing quotation mark.
+fixtures/story.txt:11:283:Narration.PresentTense:Present tense in narration: 'walks'.
+fixtures/story.txt:11:305:Narration.FirstPerson:First person in narration: 'I'.
+fixtures/story.txt:11:307:Palahniuk.ThoughtVerbs:Unpack the thought verb 'believed': show what the character does instead.
+fixtures/story.txt:11:328:Orwell.Metaphors:Dying metaphor: 'no axe to grind' (Rule 1).
+fixtures/story.txt:11:345:Hemingway.Simpler:Use 'since' for 'in view of'.
+fixtures/story.txt:11:345:Orwell.FalseLimbs:Verbal false limb: 'in view of'. Cut it (Rule 3).
+fixtures/story.txt:11:356:Orwell.FalseLimbs:Verbal false limb: 'the fact that'. Cut it (Rule 3).
+fixtures/story.txt:11:356:Strunk.FactThat:Revise 'the fact that' out of the sentence (Rule 13).
+fixtures/story.txt:11:377:Hemingway.Simpler:Use 'use' for 'utilized'.
+fixtures/story.txt:11:377:Orwell.Pretentious:Pretentious diction: 'utilized'. Use the plain word (Rule 2).
+fixtures/story.txt:11:388:Orwell.NotUn:Cure the 'not un-' formation: 'not unsmall' (Rule 3).
+fixtures/story.txt:11:400:Orwell.Foreign:Foreign phrase: 'cul-de-sac'. Say it in English (Rule 5).
 fixtures/story.txt:13:1:Hemingway.Qualifiers:Qualifier 'Perhaps'. Cut it, or say the thing outright.
 fixtures/story.txt:13:12:Hemingway.PassiveVoice:Passive voice: 'was followed'. Say who did it.
 fixtures/story.txt:13:40:Hemingway.Adverbs:Adverb 'slowly'. Find the verb that doesn't need it.
-fixtures/story.txt:13:48:Hemingway.VeryHardSentence:Very hard to read: 28 or more words in one sentence. Split it.
+fixtures/story.txt:13:48:Hemingway.VeryHardSentence:Very hard to read: grade 16.00. Split it.
 fixtures/story.txt:13:169:Hemingway.Simpler:Use 'use' for 'utilized'.
 fixtures/story.txt:13:169:Orwell.Pretentious:Pretentious diction: 'utilized'. Use the plain word (Rule 2).
 fixtures/story.txt:13:187:Hemingway.Simpler:Use 'to' for 'in order to'.
-fixtures/story.txt:13:239:Hemingway.HardSentence:Hard to read: 20 or more words in one sentence. Split it, or trim it.
+fixtures/story.txt:13:239:Hemingway.HardSentence:Hard to read: grade 13.00. Split it, or trim it.

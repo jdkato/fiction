@@ -1,0 +1,35 @@
+# The editor's readability score, taken a chapter at a time: a reader meets
+# the book in chapters, and a file-wide grade can hide one that reads
+# hard. The same Automated Readability Index as Grade, against the same
+# default target of grade 9, over each level-two section.
+extends: metric
+message: "The chapter reads at grade %s. Aim for 9 or lower."
+link: https://hemingwayapp.com/help/docs/readability
+level: warning
+scope: 'doc(section:has(> h2))'
+formula: |
+  (4.71 * (characters / words)) + (0.5 * (words / sentences)) - 21.43
+condition: "> 9"
+
+tests:
+  - name: fires
+    input: |
+      # Title
+
+      ## One
+
+      Notwithstanding the aforementioned considerations, the administration's interdepartmental reorganization initiative necessitated comprehensive reevaluation of institutional methodologies.
+
+      ## Two
+
+      He went home. It was late.
+    want: |
+      3:1:Hemingway.ChapterGrade:The chapter reads at grade 33.50. Aim for 9 or lower.
+  - name: clean
+    input: |
+      # Title
+
+      ## One
+
+      He went home. It was late. The door was shut, and he sat down on the step.
+    want: ""

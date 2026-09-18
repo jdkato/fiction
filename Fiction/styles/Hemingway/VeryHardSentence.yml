@@ -1,23 +1,22 @@
 # The Hemingway Editor's red: a sentence "far more complex than your target
-# score", one of fourteen or more words that grades 14 or higher. Drawn by
-# length alone, as HardSentence explains, the line falls at twenty-eight
-# words.
-extends: existence
-message: "Very hard to read: 28 or more words in one sentence. Split it."
+# score", one of fourteen words or more that grades 14 or higher by the
+# index HardSentence describes.
+extends: metric
+message: "Very hard to read: grade %s. Split it."
 link: https://hemingwayapp.com/help/docs/highlighted-issues
 level: warning
 scope: sentence
-nonword: true
-tokens:
-  - '^\W*(?:[\w''’-]+\W+){27,}[\w''’-]+\W*$'
+formula: |
+  math.floor((4.71 * (characters / words)) + (0.5 * words) - 21.43 + 0.5)
+condition: ">= 14 && words >= 14"
 
 tests:
   - name: fires
     input: |
-      He walked down to the harbor in the last of the light, past the boats and the sheds and the men who had nothing to say to him, and he did not look at any of them. The tide was out.
+      The harbormaster's quarterly inspection uncovered structural deterioration throughout the eastern breakwater, necessitating immediate, comprehensive, and expensive reconstruction before the winter storms returned. The tide was out.
     want: |
-      1:1:Hemingway.VeryHardSentence:Very hard to read: 28 or more words in one sentence. Split it.
+      1:1:Hemingway.VeryHardSentence:Very hard to read: grade 30.00. Split it.
   - name: clean
     input: |
-      He walked down to the harbor in the last of the light, past the boats and the sheds and the men who said nothing. The tide was out.
+      He walked down to the harbor in the last of the light, past the boats and the sheds and the men who had nothing to say to him, and he did not look at any of them. The tide was out.
     want: ""

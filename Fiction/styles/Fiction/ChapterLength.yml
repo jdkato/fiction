@@ -1,0 +1,22 @@
+# A chapter far outside the run of its neighbors: a few hundred words, or
+# ten thousand. Neither is wrong, and both are worth knowing about. The
+# band is wide, 1,000 to 6,000 words, and is the condition, so it can be
+# reset in a config: `Fiction.ChapterLength[condition] = "< 500 || result > 8000"`.
+# Each level-two section is a chapter.
+extends: metric
+message: "A chapter of %s words. Most run between 1,000 and 6,000."
+level: suggestion
+scope: 'doc(section:has(> h2))'
+formula: words
+condition: "< 1000 || result > 6000"
+
+tests:
+  - name: fires
+    input: |
+      # Title
+
+      ## One
+
+      A chapter of a dozen words is a scene, or a note to come back to.
+    want: |
+      3:1:Fiction.ChapterLength:A chapter of 17.00 words. Most run between 1,000 and 6,000.

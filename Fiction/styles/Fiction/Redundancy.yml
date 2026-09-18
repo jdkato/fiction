@@ -1,0 +1,35 @@
+# The body part that comes free with the verb: "nodded his head", "shrugged
+# her shoulders", "blinked his eyes", "thought to herself". A nod is of the
+# head, and the second noun is the writer not trusting the first.
+extends: existence
+message: "Redundant: '%s'. The verb already says it."
+level: suggestion
+ignorecase: true
+tokens:
+  - nod(?:s|ded|ding)? (?:his|her|their|my|your|its) head
+  - shrug(?:s|ged|ging)? (?:his|her|their|my|your|its) shoulders
+  - blink(?:s|ed|ing)? (?:his|her|their|my|your|its) eyes
+  - wink(?:s|ed|ing)? (?:his|her|their|my|your) eye
+  - clap(?:s|ped|ping)? (?:his|her|their|my|your) hands together
+  - (?:stood|stands?|standing|rose|rises?|rising) (?:up )?to (?:his|her|their|my|your) feet
+  - (?:knelt|kneels?|kneeling) (?:down )?on (?:his|her|their|my|your) knees
+  - (?:thought|thinks?|thinking) to (?:him|her|them|my|your)self
+  - whisper(?:s|ed|ing)? (?:quietly|softly)
+  - shout(?:s|ed|ing)? loudly
+  - (?:gazed|gazes?|stared|stares?|looked|looks?) at (?:him|her|them|it) with (?:his|her|their|my) eyes
+  - (?:sat|sits?|sitting) down (?:on|in) (?:his|her|their|my|your) (?:seat|chair)
+
+tests:
+  - name: fires
+    input: |
+      She nodded her head and shrugged her shoulders. He blinked his eyes and thought to himself that she rose to her feet.
+    want: |
+      1:5:Fiction.Redundancy:Redundant: 'nodded her head'. The verb already says it.
+      1:25:Fiction.Redundancy:Redundant: 'shrugged her shoulders'. The verb already says it.
+      1:52:Fiction.Redundancy:Redundant: 'blinked his eyes'. The verb already says it.
+      1:73:Fiction.Redundancy:Redundant: 'thought to himself'. The verb already says it.
+      1:101:Fiction.Redundancy:Redundant: 'rose to her feet'. The verb already says it.
+  - name: clean
+    input: |
+      She nodded and shrugged. He blinked and thought that she rose.
+    want: ""

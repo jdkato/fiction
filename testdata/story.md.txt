@@ -2,6 +2,7 @@ fixtures/story.md:3:8:Leonard.Weather:Never open a book with weather: 'raining'.
 fixtures/story.md:3:46:Leonard.Weather:Never open a book with weather: 'sky'.
 fixtures/story.md:3:79:Fiction.FilterWords:Filter word 'felt': cut it and show the thing itself.
 fixtures/story.md:3:79:Fiction.TellingEmotion:Telling: 'felt sad'. Show it in what the character does.
+fixtures/story.md:5:1:Fiction.ChapterLength:A chapter of 21.00 words. Most run between 1,000 and 6,000.
 fixtures/story.md:5:4:Leonard.Prologue:Avoid a prologue: it's backstory, and you can drop it in anywhere.
 fixtures/story.md:7:58:Palahniuk.ThoughtVerbs:Unpack the thought verb 'wondered': show what the character does instead.
 fixtures/story.md:7:78:Palahniuk.ThoughtVerbs:Unpack the thought verb 'realized': show what the character does instead.
@@ -62,22 +63,23 @@ fixtures/story.md:17:382:Palahniuk.ThoughtVerbs:Unpack the thought verb 'wanted'
 fixtures/story.md:17:389:Strunk.SplitInfinitive:Split infinitive: 'to diligently inquire' (Chapter V).
 fixtures/story.md:17:392:Hemingway.Adverbs:Adverb 'diligently'. Find the verb that doesn't need it.
 fixtures/story.md:19:2:Leonard.Dialect:6 phonetic spellings. Use dialect sparingly.
+fixtures/story.md:21:1:Fiction.ChapterLength:A chapter of 296.00 words. Most run between 1,000 and 6,000.
 fixtures/story.md:23:5:Fiction.Waking:Don't open a chapter with waking up: 'woke up'.
 fixtures/story.md:23:41:Fiction.AsYouKnow:'As you know' is exposition: the listener already knows.
 fixtures/story.md:23:59:Fiction.StiffDialogue:Contract 'I am' in speech, unless the character is being formal.
 fixtures/story.md:23:81:Fiction.StiffDialogue:Contract 'do not' in speech, unless the character is being formal.
 fixtures/story.md:23:114:Fiction.ActionTag:'he smiled' can't speak a line. End the speech with a period and let the beat stand.
-fixtures/story.md:23:117:Fiction.Beats:13 nods, shrugs, sighs, and smiles. Cut the beats that carry nothing.
+fixtures/story.md:23:117:Fiction.Beats:14 nods, shrugs, sighs, and smiles. Cut the beats that carry nothing.
 fixtures/story.md:23:128:Fiction.ActionTag:'nodded' can't speak a line. End the speech with a period and let the beat stand.
 fixtures/story.md:25:1:Fiction.Participle:The sentence opens on 'Walking'. Was the subject doing both at once?
-fixtures/story.md:25:39:Fiction.Adjectives:Three adjectives on one noun. Keep the one that does the work.
-fixtures/story.md:25:118:Fiction.Variants:'towards' beside its other form. Pick one and keep it.
-fixtures/story.md:25:147:Fiction.Marks:'“' beside its other form. Use one kind of mark throughout.
-fixtures/story.md:25:151:Fiction.DialoguePunctuation:Move the ” inside the closing quotation mark.
-fixtures/story.md:25:158:Narration.PresentTense:Present tense in narration: 'walks'.
-fixtures/story.md:25:180:Narration.FirstPerson:First person in narration: 'I'.
-fixtures/story.md:25:182:Palahniuk.ThoughtVerbs:Unpack the thought verb 'believed': show what the character does instead.
-fixtures/story.md:27:1:Hemingway.HardSentence:Hard to read: 20 or more words in one sentence. Split it, or trim it.
+fixtures/story.md:25:40:Fiction.Redundancy:Redundant: 'nodded his head'. The verb already says it.
+fixtures/story.md:25:59:Fiction.Adjectives:Three adjectives on one noun. Keep the one that does the work.
+fixtures/story.md:25:138:Fiction.Variants:'towards' beside its other form. Pick one and keep it.
+fixtures/story.md:25:167:Fiction.Marks:'“' beside its other form. Use one kind of mark throughout.
+fixtures/story.md:25:171:Fiction.DialoguePunctuation:Move the ” inside the closing quotation mark.
+fixtures/story.md:25:178:Narration.PresentTense:Present tense in narration: 'walks'.
+fixtures/story.md:25:200:Narration.FirstPerson:First person in narration: 'I'.
+fixtures/story.md:25:202:Palahniuk.ThoughtVerbs:Unpack the thought verb 'believed': show what the character does instead.
 fixtures/story.md:27:8:Orwell.Metaphors:Dying metaphor: 'no axe to grind' (Rule 1).
 fixtures/story.md:27:25:Hemingway.Simpler:Use 'since' for 'in view of'.
 fixtures/story.md:27:25:Orwell.FalseLimbs:Verbal false limb: 'in view of'. Cut it (Rule 3).
@@ -90,13 +92,13 @@ fixtures/story.md:27:80:Orwell.Foreign:Foreign phrase: 'cul-de-sac'. Say it in E
 fixtures/story.md:29:1:Hemingway.Qualifiers:Qualifier 'Perhaps'. Cut it, or say the thing outright.
 fixtures/story.md:29:12:Hemingway.PassiveVoice:Passive voice: 'was followed'. Say who did it.
 fixtures/story.md:29:40:Hemingway.Adverbs:Adverb 'slowly'. Find the verb that doesn't need it.
-fixtures/story.md:29:48:Hemingway.VeryHardSentence:Very hard to read: 28 or more words in one sentence. Split it.
+fixtures/story.md:29:48:Hemingway.VeryHardSentence:Very hard to read: grade 16.00. Split it.
 fixtures/story.md:29:169:Hemingway.Simpler:Use 'use' for 'utilized'.
 fixtures/story.md:29:169:Orwell.Pretentious:Pretentious diction: 'utilized'. Use the plain word (Rule 2).
 fixtures/story.md:29:187:Hemingway.Simpler:Use 'to' for 'in order to'.
-fixtures/story.md:29:239:Hemingway.HardSentence:Hard to read: 20 or more words in one sentence. Split it, or trim it.
+fixtures/story.md:29:239:Hemingway.HardSentence:Hard to read: grade 13.00. Split it, or trim it.
 fixtures/story.md:31:1:Fiction.Marks:'"' beside its other form. Use one kind of mark throughout.
-fixtures/story.md:31:1:Hemingway.VeryHardSentence:Very hard to read: 28 or more words in one sentence. Split it.
+fixtures/story.md:31:1:Hemingway.VeryHardSentence:Very hard to read: grade 41.00. Split it.
 fixtures/story.md:31:2:Fiction.Monologue:90 words in one speech. Let someone answer, or break it up.
 fixtures/story.md:31:24:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
 fixtures/story.md:31:69:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
