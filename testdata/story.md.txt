@@ -1,0 +1,55 @@
+fixtures/story.md:3:8:Leonard.Weather:Never open a book with weather: 'raining'.
+fixtures/story.md:3:46:Leonard.Weather:Never open a book with weather: 'sky'.
+fixtures/story.md:3:79:Fiction.FilterWords:Filter word 'felt': cut it and show the thing itself.
+fixtures/story.md:3:79:Fiction.TellingEmotion:Telling: 'felt sad'. Show it in what the character does.
+fixtures/story.md:5:4:Leonard.Prologue:Avoid a prologue: it's backstory, and you can drop it in anywhere.
+fixtures/story.md:7:58:Palahniuk.ThoughtVerbs:Unpack the thought verb 'wondered': show what the character does instead.
+fixtures/story.md:7:78:Palahniuk.ThoughtVerbs:Unpack the thought verb 'realized': show what the character does instead.
+fixtures/story.md:7:91:Leonard.Suddenly:Never use 'Suddenly'.
+fixtures/story.md:7:101:Leonard.Suddenly:Never use 'all hell broke loose'.
+fixtures/story.md:11:12:Leonard.Said:Use 'said' to carry dialogue, not 'she hissed'.
+fixtures/story.md:11:27:Leonard.Said:Use 'said' to carry dialogue, not 'grumbled'.
+fixtures/story.md:11:52:Leonard.Said:Use 'said' to carry dialogue, not 'Mary Ann asseverated'.
+fixtures/story.md:13:7:Leonard.Adverb:Drop the adverb on the tag: 'he said gravely'.
+fixtures/story.md:13:31:Leonard.Adverb:Drop the adverb on the tag: 'she softly replied'.
+fixtures/story.md:13:31:Leonard.Said:Use 'said' to carry dialogue, not 'she softly replied'.
+fixtures/story.md:13:55:Leonard.Exclamations:5 exclamation points. Leonard allows two or three per 100,000 words.
+fixtures/story.md:13:58:Fiction.TagCase:Lowercase the tag: 'She said'.
+fixtures/story.md:13:71:Palahniuk.ThoughtVerbs:Unpack the thought verb 'know': show what the character does instead.
+fixtures/story.md:13:75:Fiction.DialoguePunctuation:Move the " inside the closing quotation mark.
+fixtures/story.md:15:5:Fiction.FilterWords:Filter word 'saw': cut it and show the thing itself.
+fixtures/story.md:15:27:Fiction.FilterWords:Filter word 'heard': cut it and show the thing itself.
+fixtures/story.md:15:58:Fiction.BeganTo:Cut 'began to' and let the action happen.
+fixtures/story.md:15:80:Fiction.Cliches:Stock phrase: 'heart pounded'.
+fixtures/story.md:15:99:Fiction.Cliches:Stock phrase: 'let out a breath'.
+fixtures/story.md:15:116:Fiction.Cliches:Stock phrase: 'she didn't know she was holding'.
+fixtures/story.md:15:127:Palahniuk.ThoughtVerbs:Unpack the thought verb 'know': show what the character does instead.
+fixtures/story.md:15:153:Fiction.Cliches:Stock phrase: 'a chill ran down'.
+fixtures/story.md:15:189:Fiction.Intensifiers:Intensifier 'very': find the stronger word instead.
+fixtures/story.md:15:189:Strunk.Hackneyed:Use sparingly; where emphasis is necessary, use words strong in themselves: 'very' (Chapter V).
+fixtures/story.md:15:204:Fiction.Intensifiers:Intensifier 'really': find the stronger word instead.
+fixtures/story.md:15:211:Fiction.Intensifiers:Intensifier 'quite': find the stronger word instead.
+fixtures/story.md:17:1:Strunk.ActiveVoice:Substitute a verb in the active voice for 'There were a great number of' (Rule 10).
+fixtures/story.md:17:70:Strunk.Positive:Put it in positive form: 'dishonest' for 'not honest' (Rule 11).
+fixtures/story.md:17:89:Strunk.Positive:Put it in positive form: 'forgot' for 'did not remember' (Rule 11).
+fixtures/story.md:17:97:Palahniuk.ThoughtVerbs:Unpack the thought verb 'remember': show what the character does instead.
+fixtures/story.md:17:116:Strunk.Needless:Omit needless words: 'he' for 'He is a man who' (Rule 13).
+fixtures/story.md:17:135:Fiction.Intensifiers:Intensifier 'very': find the stronger word instead.
+fixtures/story.md:17:135:Strunk.Hackneyed:Use sparingly; where emphasis is necessary, use words strong in themselves: 'very' (Chapter V).
+fixtures/story.md:17:151:Strunk.Needless:Omit needless words: 'since' for 'owing to the fact that' (Rule 13).
+fixtures/story.md:17:160:Strunk.FactThat:Revise 'the fact that' out of the sentence (Rule 13).
+fixtures/story.md:17:182:Strunk.Needless:Omit needless words: 'hastily' for 'in a hasty manner' (Rule 13).
+fixtures/story.md:17:208:Strunk.Misused:Use 'different from' for 'different than' (Chapter V).
+fixtures/story.md:17:235:Strunk.Misused:Use 'almost' for 'most everybody' (Chapter V).
+fixtures/story.md:17:250:Strunk.Misused:Use 'had' for 'had got' (Chapter V).
+fixtures/story.md:17:270:Strunk.LikeAs:Use 'as' before a clause, not 'like I did' (Chapter V).
+fixtures/story.md:17:270:Strunk.Misused:Use 'as' for 'like I did' (Chapter V).
+fixtures/story.md:17:289:Strunk.Hackneyed:Used indiscriminately to intensify any and every statement: 'certainly' (Chapter V).
+fixtures/story.md:17:301:Fiction.Intensifiers:Intensifier 'very': find the stronger word instead.
+fixtures/story.md:17:301:Strunk.Hackneyed:Use sparingly; where emphasis is necessary, use words strong in themselves: 'very' (Chapter V).
+fixtures/story.md:17:306:Strunk.Hackneyed:Instead of announcing it, make it so: 'interesting' (Chapter V).
+fixtures/story.md:17:318:Strunk.Hackneyed:A hackneyed word; say it more directly: 'factor' (Chapter V).
+fixtures/story.md:17:353:Strunk.However:'However' meaning nevertheless should not come first in its sentence (Chapter V).
+fixtures/story.md:17:382:Palahniuk.ThoughtVerbs:Unpack the thought verb 'wanted': show what the character does instead.
+fixtures/story.md:17:389:Strunk.SplitInfinitive:Split infinitive: 'to diligently inquire' (Chapter V).
+fixtures/story.md:19:2:Leonard.Dialect:6 phonetic spellings. Use dialect sparingly.

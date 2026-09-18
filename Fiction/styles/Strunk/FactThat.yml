@@ -1,0 +1,20 @@
+# Rule 13: "In especial the expression the fact that should be revised out
+# of every sentence in which it occurs."
+extends: existence
+message: "Revise '%s' out of the sentence (Rule 13)."
+link: https://www.gutenberg.org/ebooks/37134
+level: suggestion
+ignorecase: true
+tokens:
+  - the fact that
+
+tests:
+  - name: fires
+    input: |
+      I was unaware of the fact that he had left.
+    want: |
+      1:18:Strunk.FactThat:Revise 'the fact that' out of the sentence (Rule 13).
+  - name: clean
+    input: |
+      I was unaware that he had left.
+    want: ""

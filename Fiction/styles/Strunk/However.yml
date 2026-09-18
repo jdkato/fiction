@@ -1,0 +1,20 @@
+# Chapter V, "However": "In the meaning nevertheless, not to come first in
+# its sentence or clause." When it comes first, it means "in whatever way."
+extends: existence
+message: "'However' meaning nevertheless should not come first in its sentence (Chapter V)."
+link: https://www.gutenberg.org/ebooks/37134
+level: suggestion
+nonword: true
+tokens:
+  - '(?:^|(?<=[.!?]\s))However,'
+
+tests:
+  - name: fires
+    input: |
+      The roads were impassable. However, we reached camp.
+    want: |
+      1:28:Strunk.However:'However' meaning nevertheless should not come first in its sentence (Chapter V).
+  - name: clean
+    input: |
+      The roads were impassable. At last, however, we reached camp. However you advise him, he will do as he thinks best.
+    want: ""

@@ -1,0 +1,21 @@
+# Rule 5: "Keep your exclamation points under control. You are allowed no
+# more than two or three per 100,000 words of prose." The count is per
+# file; raise `max` for a novel in one file.
+extends: occurrence
+message: "%d exclamation points. Leonard allows two or three per 100,000 words."
+link: https://www.theguardian.com/books/2010/feb/20/ten-rules-for-writing-fiction-part-one
+level: warning
+scope: summary
+token: '!'
+max: 3
+
+tests:
+  - name: fires
+    input: |
+      Go! Now! Run! Faster!
+    want: |
+      1:3:Leonard.Exclamations:4 exclamation points. Leonard allows two or three per 100,000 words.
+  - name: clean
+    input: |
+      Go! Now. Run.
+    want: ""

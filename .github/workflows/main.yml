@@ -1,0 +1,50 @@
+name: Build + Test
+
+on: [push, pull_request]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      # The archive is what users install, so the license and the attribution
+      # for the transcribed rules travel inside it.
+      - run: cp LICENSE NOTICE Fiction/
+
+      # GitHub serves the asset for `fiction.zip` too, and Vale looks for a
+      # directory named after the URL, so the archive carries both spellings.
+      - run: cp -r Fiction fiction
+      - run: zip -r Fiction.zip Fiction fiction -x "*.DS_Store"
+
+      - name: Upload style to release
+        uses: svenstaro/upload-release-action@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: Fiction.zip
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # The rules carry their cases in `tests:` blocks and one reads the
+      # opening paragraph with a `doc(...)` scope, both on Vale's v3 branch
+      # -- built from source so the suite runs against what ships next.
+      - uses: actions/checkout@v4
+        with:
+          repository: vale-cli/vale
+          ref: v3
+          path: vale-src
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: vale-src/go.mod
+      - run: |
+          go build -o "$RUNNER_TEMP/bin/vale" ./cmd/vale
+          echo "$RUNNER_TEMP/bin" >> $GITHUB_PATH
+        working-directory: vale-src
+
+      - run: ./test.sh

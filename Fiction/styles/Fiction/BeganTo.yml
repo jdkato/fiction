@@ -1,0 +1,27 @@
+# "She began to run" delays the running. Unless the start is the point, the
+# character runs.
+extends: existence
+message: "Cut '%s' and let the action happen."
+level: suggestion
+ignorecase: true
+tokens:
+  - began to
+  - begun to
+  - begins to
+  - beginning to
+  - started to
+  - starts to
+  - starting to
+  - proceeded to
+
+tests:
+  - name: fires
+    input: |
+      She began to run, and he started to follow.
+    want: |
+      1:5:Fiction.BeganTo:Cut 'began to' and let the action happen.
+      1:26:Fiction.BeganTo:Cut 'started to' and let the action happen.
+  - name: clean
+    input: |
+      She ran, and he followed.
+    want: ""

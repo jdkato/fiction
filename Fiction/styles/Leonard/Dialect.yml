@@ -1,0 +1,21 @@
+# Rule 7: "Use regional dialect, patois, sparingly." A dropped g is the
+# commonest phonetic spelling; a few set the voice and a page of them is a
+# chore. The count is per file.
+extends: occurrence
+message: "%d phonetic spellings. Use dialect sparingly."
+link: https://www.theguardian.com/books/2010/feb/20/ten-rules-for-writing-fiction-part-one
+level: suggestion
+scope: summary
+token: "\\b\\w+in['’](?=\\s|[,.!?;:]|$)"
+max: 5
+
+tests:
+  - name: fires
+    input: |
+      "Nothin' doin'," he said. "Ain't goin' nowhere, ain't comin' back, ain't stayin' or leavin' neither."
+    want: |
+      1:2:Leonard.Dialect:6 phonetic spellings. Use dialect sparingly.
+  - name: clean
+    input: |
+      "Nothin' doin'," he said. "I'm not going anywhere."
+    want: ""

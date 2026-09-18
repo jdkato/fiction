@@ -1,0 +1,32 @@
+# Chapter V, "Split Infinitive": "the construction is in disfavor and is
+# avoided by nearly all careful writers." To diligently inquire: to inquire
+# diligently.
+extends: existence
+message: "Split infinitive: '%s' (Chapter V)."
+link: https://www.gutenberg.org/ebooks/37134
+level: suggestion
+ignorecase: true
+tokens:
+  - to \w+ly \w+
+exceptions:
+  - to only
+  - to early
+  - to family
+  - to reply
+  - to apply
+  - to supply
+  - to fly
+  - to rally
+  - to bully
+  - to ally
+
+tests:
+  - name: fires
+    input: |
+      He wanted to diligently inquire.
+    want: |
+      1:11:Strunk.SplitInfinitive:Split infinitive: 'to diligently inquire' (Chapter V).
+  - name: clean
+    input: |
+      He wanted to inquire diligently, and to reply early.
+    want: ""

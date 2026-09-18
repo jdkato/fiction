@@ -1,0 +1,33 @@
+# An intensifier weakens the word it leans on. "Very tired" is less tired
+# than "exhausted", and "really" is the writer asking to be believed.
+extends: existence
+message: "Intensifier '%s': find the stronger word instead."
+level: suggestion
+ignorecase: true
+tokens:
+  - very
+  - really
+  - quite
+  - rather
+  - somewhat
+  - extremely
+  - incredibly
+  - totally
+  - absolutely
+  - utterly
+  - completely
+  - truly
+  - literally
+
+tests:
+  - name: fires
+    input: |
+      She was very tired and really quite cold.
+    want: |
+      1:9:Fiction.Intensifiers:Intensifier 'very': find the stronger word instead.
+      1:24:Fiction.Intensifiers:Intensifier 'really': find the stronger word instead.
+      1:31:Fiction.Intensifiers:Intensifier 'quite': find the stronger word instead.
+  - name: clean
+    input: |
+      She was exhausted and shivering.
+    want: ""

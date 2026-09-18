@@ -1,0 +1,26 @@
+# Rule 3: "Never use a verb other than 'said' to carry dialogue." The line
+# belongs to the character; the verb is the writer sticking his nose in.
+# Only a verb beside a quotation mark is a tag, so "she laughed" in
+# narration is left alone, and so is a new sentence after a closing period. "Asked" is allowed, as it is by most editors.
+extends: existence
+message: "Use 'said' to carry dialogue, not '%s'."
+link: https://www.theguardian.com/books/2010/feb/20/ten-rules-for-writing-fiction-part-one
+level: warning
+ignorecase: true
+nonword: true
+tokens:
+  - '(?<=[,!?—–]["”]\s)(?:\w+\s+){0,2}?(?:exclaimed|growled|hissed|gasped|snapped|barked|cautioned|grumbled|lied|breathed|chuckled|laughed|giggled|snarled|spat|sighed|smirked|purred|shrieked|screamed|cried|moaned|groaned|muttered|murmured|whispered|mumbled|declared|announced|retorted|replied|responded|queried|questioned|opined|asseverated|insisted|demanded|ordered|commanded|pleaded|begged|roared|bellowed|thundered|sneered|scoffed|chirped|quipped|joked|stated|remarked|observed|noted|interjected|interrupted|admitted|confessed|explained|offered|ventured|mused|reasoned|argued|protested|objected|countered|urged|warned|admonished|grunted|huffed|wailed|sobbed|yelled|hollered|blurted|drawled|intoned|proclaimed|pronounced|prompted|repeated|echoed|agreed|conceded|suggested|guessed|wondered)\b'
+  - '\b(?:exclaimed|growled|hissed|gasped|snapped|barked|cautioned|grumbled|lied|breathed|chuckled|laughed|giggled|snarled|spat|sighed|smirked|purred|shrieked|screamed|cried|moaned|groaned|muttered|murmured|whispered|mumbled|declared|announced|retorted|replied|responded|queried|questioned|opined|asseverated|insisted|demanded|ordered|commanded|pleaded|begged|roared|bellowed|thundered|sneered|scoffed|chirped|quipped|joked|stated|remarked|observed|noted|interjected|interrupted|admitted|confessed|explained|offered|ventured|mused|reasoned|argued|protested|objected|countered|urged|warned|admonished|grunted|huffed|wailed|sobbed|yelled|hollered|blurted|drawled|intoned|proclaimed|pronounced|prompted|repeated|echoed|agreed|conceded|suggested|guessed|wondered)(?=,?\s+["“])'
+
+tests:
+  - name: fires
+    input: |
+      "Get out," she hissed. He grumbled, "Fine." "Now," Mary Ann asseverated.
+    want: |
+      1:12:Leonard.Said:Use 'said' to carry dialogue, not 'she hissed'.
+      1:27:Leonard.Said:Use 'said' to carry dialogue, not 'grumbled'.
+      1:52:Leonard.Said:Use 'said' to carry dialogue, not 'Mary Ann asseverated'.
+  - name: clean
+    input: |
+      "Get out," she said. He said, "Fine." She laughed and left.
+    want: ""

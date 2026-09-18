@@ -1,0 +1,8 @@
+{
+  "feed": "https://github.com/jdkato/fiction/releases.atom",
+  "vale_version": ">=3.22.0",
+  "license_files": [
+    "LICENSE",
+    "NOTICE"
+  ]
+}

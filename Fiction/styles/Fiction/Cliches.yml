@@ -1,0 +1,45 @@
+# Stock phrases of fiction: the ones a reader has met in a hundred other
+# books and reads past without seeing.
+extends: existence
+message: "Stock phrase: '%s'."
+level: suggestion
+ignorecase: true
+tokens:
+  - heart (?:pounded|pounding|raced|racing|hammered|hammering|skipped a beat)
+  - (?:s?he|they|I) (?:didn't|did not|hadn't|had not) (?:know|realize) (?:s?he|they|I) (?:was|were|had been) holding
+  - let out a breath
+  - (?:released|let out) (?:a|the) breath
+  - a single tear
+  - dark and stormy night
+  - little did (?:s?he|they|I|we) know
+  - it was all a dream
+  - blood ran cold
+  - time (?:stood still|seemed to stop)
+  - sigh of relief
+  - eyes widened
+  - shivers? (?:ran |went )?(?:up|down) (?:my|her|his|their) spine
+  - in the nick of time
+  - as if on cue
+  - against all odds
+  - long story short
+  - for what (?:seemed|felt) like an eternity
+  - gasped in (?:surprise|shock|horror)
+  - wave of (?:relief|nausea|panic|dread)
+  - (?:s?he|they|I) (?:let|loosed) out a (?:scream|cry|shriek)
+  - the calm before the storm
+  - every fiber of (?:my|her|his|their) being
+  - a chill (?:ran|went) (?:up|down|through)
+
+tests:
+  - name: fires
+    input: |
+      Her heart pounded. She let out a breath she didn't know she was holding, and a chill ran down her spine.
+    want: |
+      1:5:Fiction.Cliches:Stock phrase: 'heart pounded'.
+      1:24:Fiction.Cliches:Stock phrase: 'let out a breath'.
+      1:41:Fiction.Cliches:Stock phrase: 'she didn't know she was holding'.
+      1:78:Fiction.Cliches:Stock phrase: 'a chill ran down'.
+  - name: clean
+    input: |
+      Her pulse was in her ears. She breathed out.
+    want: ""

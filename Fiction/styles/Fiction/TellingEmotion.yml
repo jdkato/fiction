@@ -1,0 +1,21 @@
+# An emotion named is an emotion told. The reader is handed the label
+# instead of the clenched hand or the door left open.
+extends: existence
+message: "Telling: '%s'. Show it in what the character does."
+level: suggestion
+ignorecase: true
+tokens:
+  - '(?:felt|feeling|was|were|looked|seemed|became|got) (?:so |very |really |a little |a bit )?(?:sad|happy|angry|mad|afraid|scared|frightened|nervous|anxious|worried|excited|furious|terrified|embarrassed|ashamed|surprised|shocked|confused|relieved|jealous|lonely|bored|annoyed|frustrated|disappointed|upset)'
+
+tests:
+  - name: fires
+    input: |
+      He felt sad. She was so angry that she looked nervous.
+    want: |
+      1:4:Fiction.TellingEmotion:Telling: 'felt sad'. Show it in what the character does.
+      1:18:Fiction.TellingEmotion:Telling: 'was so angry'. Show it in what the character does.
+      1:40:Fiction.TellingEmotion:Telling: 'looked nervous'. Show it in what the character does.
+  - name: clean
+    input: |
+      He put the photograph face down. She counted to ten.
+    want: ""

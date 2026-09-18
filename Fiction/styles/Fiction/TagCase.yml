@@ -1,0 +1,21 @@
+# A dialogue tag continues the sentence the dialogue started, so the
+# pronoun after the closing mark is lowercase even after ! or ?: "Run!" she
+# said. A capital is fine when what follows is a new sentence of action.
+extends: existence
+message: "Lowercase the tag: '%s'."
+level: warning
+nonword: true
+tokens:
+  - '(?<=[,!?]["”]\s)(?:She|He|They|We|You)\s+(?:said|asked|replied|answered|told|whispered|shouted|called|muttered|added|went on|continued)\b'
+
+tests:
+  - name: fires
+    input: |
+      "Run!" She said. "Why?" He asked.
+    want: |
+      1:8:Fiction.TagCase:Lowercase the tag: 'She said'.
+      1:25:Fiction.TagCase:Lowercase the tag: 'He asked'.
+  - name: clean
+    input: |
+      "Run!" she said. "Why?" He turned to look.
+    want: ""

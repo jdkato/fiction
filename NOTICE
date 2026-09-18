@@ -1,0 +1,23 @@
+Fiction is MIT licensed; see LICENSE.
+
+Some rules restate, in their comments and messages, the advice they enforce.
+Each rule links to its source. Sources and their terms:
+
+  - William Strunk Jr., The Elements of Style (1918), Project Gutenberg
+    ebook #37134 (https://www.gutenberg.org/ebooks/37134), in the public
+    domain. The Strunk style transcribes Rules 10, 11, and 13 and the
+    entries of Chapter V that name a replacement; its comments quote the
+    book.
+  - Elmore Leonard, "Easy on the Adverbs, Exclamation Points and Especially
+    Hooptedoodle", The New York Times, July 16, 2001, reprinted in The
+    Guardian's "Ten rules for writing fiction" (February 20, 2010). The
+    Leonard style implements six of the ten rules; each is restated in the
+    package's own words, with short quotations in rule comments.
+  - Chuck Palahniuk, "Nuts and Bolts: 'Thought' Verbs", LitReactor, August
+    12, 2013. The Palahniuk style takes its verb list from the essay, with a
+    short quotation in the rule comment.
+
+The core Fiction style is the package's own. Elmore Leonard, Chuck Palahniuk,
+and William Strunk Jr. are named as the authors of the advice the styles
+carry; this package is not endorsed by or affiliated with them or their
+estates.

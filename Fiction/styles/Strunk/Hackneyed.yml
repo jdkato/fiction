@@ -1,0 +1,41 @@
+# Chapter V: the words the book calls hackneyed, perfunctory, or overworked,
+# "good in their place, but constantly obtruding themselves into places
+# where they have no right to be." Each message paraphrases the entry. A
+# substitution's first %s is the swap's value, so the advice leads.
+extends: substitution
+message: "%s: '%s' (Chapter V)."
+link: https://www.gutenberg.org/ebooks/37134
+level: suggestion
+ignorecase: true
+swap:
+  certainly: Used indiscriminately to intensify any and every statement
+  clever: Greatly overused; restrict it to ingenuity in small matters
+  factor: A hackneyed word; say it more directly
+  feature: A hackneyed word that usually adds nothing
+  interesting: Instead of announcing it, make it so
+  literally: Often used in support of exaggeration
+  respectively?: May usually be omitted with advantage
+  very: Use sparingly; where emphasis is necessary, use words strong in themselves
+  so (?=\w+ly\b|good|warm|delightful|nice|bad|glad|happy|sad|tired|long|much|many|little|few): Avoid as an intensifier
+  worth while: Overworked as a term of vague approval
+  one of the most: Threadbare and forcible-feeble
+  of a \w+ (?:character|nature): Often simply redundant
+  the \w+ system\b: Frequently used without need
+  thanking you in advance: Sounds as if you will not write again
+
+tests:
+  - name: fires
+    input: |
+      It was certainly a very interesting factor, literally one of the most clever features.
+    want: |
+      1:8:Strunk.Hackneyed:Used indiscriminately to intensify any and every statement: 'certainly' (Chapter V).
+      1:20:Strunk.Hackneyed:Use sparingly; where emphasis is necessary, use words strong in themselves: 'very' (Chapter V).
+      1:25:Strunk.Hackneyed:Instead of announcing it, make it so: 'interesting' (Chapter V).
+      1:37:Strunk.Hackneyed:A hackneyed word; say it more directly: 'factor' (Chapter V).
+      1:45:Strunk.Hackneyed:Often used in support of exaggeration: 'literally' (Chapter V).
+      1:55:Strunk.Hackneyed:Threadbare and forcible-feeble: 'one of the most' (Chapter V).
+      1:71:Strunk.Hackneyed:Greatly overused; restrict it to ingenuity in small matters: 'clever' (Chapter V).
+  - name: clean
+    input: |
+      It bore on the outcome, and it was the cleverest of the three.
+    want: ""

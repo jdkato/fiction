@@ -1,0 +1,21 @@
+# In fiction the comma or period that ends a line of dialogue sits inside
+# the closing quotation mark: "I know," she said. Turn the rule off for
+# British punctuation, which puts it outside when it belongs to the frame.
+extends: existence
+message: "Move the %s inside the closing quotation mark."
+level: warning
+nonword: true
+tokens:
+  - '(?<=\w)["”](?=[,.](?:\s|$))'
+
+tests:
+  - name: fires
+    input: |
+      "I know", she said. She said, "I know".
+    want: |
+      1:8:Fiction.DialoguePunctuation:Move the " inside the closing quotation mark.
+      1:38:Fiction.DialoguePunctuation:Move the " inside the closing quotation mark.
+  - name: clean
+    input: |
+      "I know," she said. She said, "I know."
+    want: ""

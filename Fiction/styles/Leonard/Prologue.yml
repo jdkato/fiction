@@ -1,0 +1,25 @@
+# Rule 2: "Avoid prologues." A prologue in a novel is backstory, and it can
+# be dropped in anywhere.
+extends: existence
+message: "Avoid a prologue: it's backstory, and you can drop it in anywhere."
+link: https://www.theguardian.com/books/2010/feb/20/ten-rules-for-writing-fiction-part-one
+level: suggestion
+scope: heading
+ignorecase: true
+tokens:
+  - prologue
+
+tests:
+  - name: fires
+    input: |
+      # Prologue
+
+      Years earlier.
+    want: |
+      1:3:Leonard.Prologue:Avoid a prologue: it's backstory, and you can drop it in anywhere.
+  - name: clean
+    input: |
+      # One
+
+      There was no prologue to speak of.
+    want: ""

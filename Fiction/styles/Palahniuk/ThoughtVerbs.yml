@@ -1,0 +1,45 @@
+# From "Nuts and Bolts: 'Thought' Verbs" (LitReactor, 2013): "you may not
+# use 'thought' verbs. These include: Thinks, Knows, Understands, Realizes,
+# Believes, Wants, Remembers, Imagines, Desires, and a hundred others you
+# love to use. The list should also include: Loves and Hates." Thinking is
+# abstract; show the physical actions and details and let the reader do the
+# thinking. Dialogue is not exempt here, since a rule cannot yet tell a
+# quotation from narration.
+extends: existence
+message: "Unpack the thought verb '%s': show what the character does instead."
+link: https://litreactor.com/essays/chuck-palahniuk/nuts-and-bolts-“thought”-verbs
+level: suggestion
+ignorecase: true
+tokens:
+  - think(?:s|ing)?
+  - thought
+  - know(?:s|ing)?
+  - knew
+  - understand(?:s|ing)?
+  - understood
+  - realiz(?:e|es|ed|ing)
+  - believ(?:e|es|ed|ing)
+  - want(?:s|ed|ing)?
+  - remember(?:s|ed|ing)?
+  - imagin(?:e|es|ed|ing)
+  - desir(?:e|es|ed|ing)
+  - lov(?:e|es|ed|ing)
+  - hat(?:e|es|ed|ing)
+  - wonder(?:s|ed|ing)?
+  - decid(?:e|es|ed|ing)
+  - recogniz(?:e|es|ed|ing)
+  - consider(?:s|ed|ing)?
+  - suppos(?:e|es|ed|ing)
+  - figur(?:e|es|ed|ing) out
+
+tests:
+  - name: fires
+    input: |
+      Kenny wondered if Monica didn't like him going out. Adam knew Gwen liked him.
+    want: |
+      1:7:Palahniuk.ThoughtVerbs:Unpack the thought verb 'wondered': show what the character does instead.
+      1:58:Palahniuk.ThoughtVerbs:Unpack the thought verb 'knew': show what the character does instead.
+  - name: clean
+    input: |
+      The mornings after Kenny had stayed out, Monica put only her own cup in the microwave.
+    want: ""

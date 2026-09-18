@@ -1,0 +1,22 @@
+# Chapter V, "Like": "Not to be misused for as. Like governs nouns and
+# pronouns; before phrases and clauses the equivalent word is as."
+extends: existence
+message: "Use 'as' before a clause, not '%s' (Chapter V)."
+link: https://www.gutenberg.org/ebooks/37134
+level: suggestion
+ignorecase: true
+tokens:
+  - like (?:I|he|she|they|we|you|it) (?:did|do|does|was|were|is|are|had|have|has|would|could|should|said|thought)\b
+  - like in the (?:old|good old) days
+
+tests:
+  - name: fires
+    input: |
+      We spent the evening like in the old days, and he thought like I did.
+    want: |
+      1:22:Strunk.LikeAs:Use 'as' before a clause, not 'like in the old days' (Chapter V).
+      1:59:Strunk.LikeAs:Use 'as' before a clause, not 'like I did' (Chapter V).
+  - name: clean
+    input: |
+      We spent the evening as in the old days, and he thought as I did.
+    want: ""

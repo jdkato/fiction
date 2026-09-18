@@ -1,0 +1,35 @@
+# A perception verb between the reader and the scene: "she saw the door
+# open" reports the seeing; "the door opened" puts the reader in the room.
+# Point-of-view narration is the usual place for these.
+extends: existence
+message: "Filter word '%s': cut it and show the thing itself."
+level: suggestion
+ignorecase: true
+tokens:
+  - saw
+  - heard
+  - felt
+  - smelled
+  - tasted
+  - noticed
+  - watched
+  - observed
+  - seemed
+  - appeared
+  - sensed
+  - could see
+  - could hear
+  - could feel
+
+tests:
+  - name: fires
+    input: |
+      She saw the door open and heard a step. It seemed cold.
+    want: |
+      1:5:Fiction.FilterWords:Filter word 'saw': cut it and show the thing itself.
+      1:27:Fiction.FilterWords:Filter word 'heard': cut it and show the thing itself.
+      1:44:Fiction.FilterWords:Filter word 'seemed': cut it and show the thing itself.
+  - name: clean
+    input: |
+      The door opened. A step on the stair. Cold.
+    want: ""

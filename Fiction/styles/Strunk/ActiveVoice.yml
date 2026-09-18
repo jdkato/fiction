@@ -1,0 +1,25 @@
+# Rule 10, "Use the active voice": "Many a tame sentence of description or
+# exposition can be made lively and emphatic by substituting a verb in the
+# active voice for some such perfunctory expression as there is, or could
+# be heard." The passive itself is Std.Grammar.PassiveVoice; this is the
+# perfunctory opener.
+extends: existence
+message: "Substitute a verb in the active voice for '%s' (Rule 10)."
+link: https://www.gutenberg.org/ebooks/37134
+level: suggestion
+ignorecase: true
+tokens:
+  - there (?:is|are|was|were) (?:a great number of|a great many|an|a|the|no|some|many|several)
+  - could be (?:heard|seen|felt|found)
+
+tests:
+  - name: fires
+    input: |
+      There were a great number of dead leaves lying on the ground. The sound of a guitar could be heard.
+    want: |
+      1:1:Strunk.ActiveVoice:Substitute a verb in the active voice for 'There were a great number of' (Rule 10).
+      1:85:Strunk.ActiveVoice:Substitute a verb in the active voice for 'could be heard' (Rule 10).
+  - name: clean
+    input: |
+      Dead leaves covered the ground. Somewhere in the house a guitar hummed sleepily.
+    want: ""

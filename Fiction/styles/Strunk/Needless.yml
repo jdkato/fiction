@@ -1,0 +1,40 @@
+# Rule 13, "Omit needless words": "A sentence should contain no
+# unnecessary words, a paragraph no unnecessary sentences." The book's list
+# of expressions in common use that violate it.
+extends: substitution
+message: "Omit needless words: '%s' for '%s' (Rule 13)."
+link: https://www.gutenberg.org/ebooks/37134
+level: suggestion
+ignorecase: true
+action:
+  name: replace
+swap:
+  the question as to whether: whether
+  as to whether: whether
+  there is no doubt but that: no doubt
+  used for fuel purposes: used for fuel
+  for \w+ purposes: for that
+  he is a man who: he
+  she is a woman who: she
+  in a hasty manner: hastily
+  in a \w+ manner: that way
+  this is a subject which: this subject
+  owing to the fact that: since
+  in spite of the fact that: though
+  call your attention to the fact that: remind you
+  I was unaware of the fact that: I was unaware that
+  the fact that (?:s?he|they|I|we|you) had not succeeded: their failure
+  the fact that (?:s?he|they|I|we|you) had arrived: their arrival
+
+tests:
+  - name: fires
+    input: |
+      He is a man who is very ambitious, owing to the fact that he left in a hasty manner.
+    want: |
+      1:1:Strunk.Needless:Omit needless words: 'he' for 'He is a man who' (Rule 13).
+      1:36:Strunk.Needless:Omit needless words: 'since' for 'owing to the fact that' (Rule 13).
+      1:67:Strunk.Needless:Omit needless words: 'hastily' for 'in a hasty manner' (Rule 13).
+  - name: clean
+    input: |
+      He is very ambitious, since he left hastily.
+    want: ""

@@ -1,0 +1,29 @@
+# Rule 11, "Put statements in positive form": "Use the word not as a means
+# of denial or in antithesis, never as a means of evasion." The book's own
+# pairs.
+extends: substitution
+message: "Put it in positive form: '%s' for '%s' (Rule 11)."
+link: https://www.gutenberg.org/ebooks/37134
+level: suggestion
+ignorecase: true
+action:
+  name: replace
+swap:
+  not honest: dishonest
+  not important: trifling
+  did not remember: forgot
+  did not pay any attention to: ignored
+  did not have much confidence in: distrusted
+  not very often: seldom
+
+tests:
+  - name: fires
+    input: |
+      He was not honest, and he did not remember the debt.
+    want: |
+      1:8:Strunk.Positive:Put it in positive form: 'dishonest' for 'not honest' (Rule 11).
+      1:27:Strunk.Positive:Put it in positive form: 'forgot' for 'did not remember' (Rule 11).
+  - name: clean
+    input: |
+      He was dishonest, and he forgot the debt.
+    want: ""

@@ -1,0 +1,21 @@
+# Rule 6: "Never use the words 'suddenly' or 'all hell broke loose'."
+extends: existence
+message: "Never use '%s'."
+link: https://www.theguardian.com/books/2010/feb/20/ten-rules-for-writing-fiction-part-one
+level: error
+ignorecase: true
+tokens:
+  - suddenly
+  - all hell broke loose
+
+tests:
+  - name: fires
+    input: |
+      Suddenly, all hell broke loose.
+    want: |
+      1:1:Leonard.Suddenly:Never use 'Suddenly'.
+      1:11:Leonard.Suddenly:Never use 'all hell broke loose'.
+  - name: clean
+    input: |
+      The door came off its hinges.
+    want: ""

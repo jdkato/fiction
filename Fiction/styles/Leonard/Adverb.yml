@@ -1,0 +1,42 @@
+# Rule 4: "Never use an adverb to modify the verb 'said'." The adverb
+# distracts and interrupts the rhythm of the exchange: "he admonished
+# gravely."
+extends: existence
+message: "Drop the adverb on the tag: '%s'."
+link: https://www.theguardian.com/books/2010/feb/20/ten-rules-for-writing-fiction-part-one
+level: warning
+ignorecase: true
+tokens:
+  - '(?:said|asked|replied|answered|whispered|shouted|muttered) \w+ly'
+  - '\w+ly,? (?:s?he|they|we|you|I|[A-Z]\w+) (?:said|asked|replied|answered)'
+  - '(?:s?he|they|we|you|I|[A-Z]\w+) (?:said|asked) \w+ly'
+  - '(?:s?he|they|we|you|I|[A-Z]\w+) \w+ly,? (?:said|asked|replied|answered)'
+exceptions:
+  - only
+  - early
+  - family
+  - reply
+  - apply
+  - supply
+  - fly
+  - July
+  - ugly
+  - holy
+  - belly
+  - jelly
+  - rally
+  - ally
+  - bully
+  - likely
+
+tests:
+  - name: fires
+    input: |
+      "No," he said gravely. "Yes," she softly replied.
+    want: |
+      1:7:Leonard.Adverb:Drop the adverb on the tag: 'he said gravely'.
+      1:31:Leonard.Adverb:Drop the adverb on the tag: 'she softly replied'.
+  - name: clean
+    input: |
+      "No," he said. He said only that he would come early.
+    want: ""

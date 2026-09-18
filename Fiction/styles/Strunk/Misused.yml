@@ -1,0 +1,45 @@
+# Chapter V, "Words and Expressions Commonly Misused": the entries that
+# name a replacement. Each swap is the book's.
+extends: substitution
+message: "Use '%s' for '%s' (Chapter V)."
+link: https://www.gutenberg.org/ebooks/37134
+level: suggestion
+ignorecase: true
+action:
+  name: replace
+swap:
+  different than: different from
+  most (?:everybody|everyone|all|every)\b: almost
+  oftentimes: often
+  ofttimes: often
+  student body: students
+  have got: have
+  has got: has
+  had got: had
+  lose out: lose
+  try out: try
+  win out: win
+  sign up: sign
+  register up: register
+  near by: near
+  along (?:these|those|the same) lines: to the same effect
+  dependable: reliable
+  viewpoint: point of view
+  (?:like|likes) (?:I|he|she|they|we|you) (?:did|do|does)\b: as
+  in many cases: many
+  data (?:is|was|has)\b: data are
+  \bproven\b: proved
+
+tests:
+  - name: fires
+    input: |
+      It was different than before, and most everybody had got used to it, like I did.
+    want: |
+      1:8:Strunk.Misused:Use 'different from' for 'different than' (Chapter V).
+      1:35:Strunk.Misused:Use 'almost' for 'most everybody' (Chapter V).
+      1:50:Strunk.Misused:Use 'had' for 'had got' (Chapter V).
+      1:70:Strunk.Misused:Use 'as' for 'like I did' (Chapter V).
+  - name: clean
+    input: |
+      It was different from before, and almost everybody had grown used to it, as I did.
+    want: ""

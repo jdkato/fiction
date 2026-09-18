@@ -1,0 +1,48 @@
+# Rule 1: "Never open a book with weather." The paragraph after the title
+# is the opening; a manuscript with no title heading is not checked, and
+# plain text is not either, since it has no title to find.
+extends: existence
+message: "Never open a book with weather: '%s'."
+link: https://www.theguardian.com/books/2010/feb/20/ten-rules-for-writing-fiction-part-one
+level: warning
+scope: 'text & doc(h1 + p)'
+ignorecase: true
+tokens:
+  - rain(?:ed|ing|y|s)?
+  - snow(?:ed|ing|y|s)?
+  - wind(?:y|s)?
+  - storm(?:y|ed|ing|s)?
+  - thunder(?:ed|ing)?
+  - lightning
+  - fog(?:gy)?
+  - mist(?:y)?
+  - drizzl(?:e|ed|ing)
+  - sleet
+  - hail(?:ed|ing)?
+  - sunshine
+  - sunny
+  - overcast
+  - cloud(?:s|y|less)?
+  - humid(?:ity)?
+  - weather
+  - sky
+
+tests:
+  - name: fires
+    input: |
+      # Title
+
+      It was raining when she came home, and the sky was low.
+
+      Later, the rain stopped.
+    want: |
+      3:8:Leonard.Weather:Never open a book with weather: 'raining'.
+      3:44:Leonard.Weather:Never open a book with weather: 'sky'.
+  - name: clean
+    input: |
+      # Title
+
+      She came home late.
+
+      Later, the rain stopped.
+    want: ""
