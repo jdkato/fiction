@@ -1,0 +1,23 @@
+# "Walking to the door, she opened it": a participial phrase in front of
+# the sentence makes two actions happen at once, and often they can't. The
+# opener is read by part of speech, so a gerund subject, "Walking is good
+# for you", is left alone.
+extends: sequence
+message: "The sentence opens on '%s'. Was the subject doing both at once?"
+level: suggestion
+tokens:
+  - pattern: '\S+'
+    negate: true
+  - pattern: '\w+ing'
+    tag: VBG
+
+tests:
+  - name: fires
+    input: |
+      Walking to the door, she opened it. Walking is good for you.
+    want: |
+      1:1:Fiction.Participle:The sentence opens on 'Walking'. Was the subject doing both at once?
+  - name: clean
+    input: |
+      She walked to the door and opened it. Walking is good for you.
+    want: ""

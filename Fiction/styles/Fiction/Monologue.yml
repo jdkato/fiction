@@ -1,0 +1,20 @@
+# One speech that runs on. Eighty words is a long paragraph of talk with
+# nobody answering. A speech that continues into the next paragraph is
+# counted a paragraph at a time.
+extends: occurrence
+message: "%d words in one speech. Let someone answer, or break it up."
+level: suggestion
+scope: quote
+token: "[\\w'’]+"
+max: 80
+
+tests:
+  - name: fires
+    input: |
+      "I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again," he said.
+    want: |
+      1:2:Fiction.Monologue:90 words in one speech. Let someone answer, or break it up.
+  - name: clean
+    input: |
+      "I told you before," he said, and then he said it again, at length, in narration that runs past eighty words if it has to, because narration is not speech and the rule does not read it, however long it runs, and it can run for a good while yet without anyone stopping it, on and on, past eighty words, past ninety, and still nothing fires, which is the point of the case.
+    want: ""

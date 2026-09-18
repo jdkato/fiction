@@ -1,0 +1,34 @@
+# Both forms are right; a manuscript picks one. The first to appear sets
+# the expectation, and each later use of the other is flagged.
+extends: consistency
+message: "'%s' beside its other form. Pick one and keep it."
+level: warning
+ignorecase: true
+either:
+  toward: towards
+  afterward: afterwards
+  backward: backwards
+  among: amongst
+  while: whilst
+  okay: OK
+  all right: alright
+  gray: grey
+  color: colour
+  realize: realise
+  theater: theatre
+  learned: learnt
+  dreamed: dreamt
+  leaped: leapt
+  spelled: spelt
+  burned: burnt
+
+tests:
+  - name: fires
+    input: |
+      She walked toward the door and then towards the window.
+    want: |
+      1:37:Fiction.Variants:'towards' beside its other form. Pick one and keep it.
+  - name: clean
+    input: |
+      She walked toward the door and then toward the window.
+    want: ""

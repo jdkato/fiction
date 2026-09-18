@@ -1,0 +1,48 @@
+# Rule 3: "If it is possible to cut a word out, always cut it out." The
+# essay's "operators or verbal false limbs", which "save the trouble of
+# picking out appropriate verbs and nouns, and at the same time pad each
+# sentence with extra syllables", and the phrases it names as padding at
+# the ends of sentences and in place of a plain conjunction.
+extends: existence
+message: "Verbal false limb: '%s'. Cut it (Rule 3)."
+link: https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/
+level: suggestion
+ignorecase: true
+tokens:
+  - render(?:s|ed|ing)? inoperative
+  - militat(?:e|es|ed|ing) against
+  - ma(?:k|d)(?:e|es|ing) contact with
+  - be(?:en|ing)? subjected to
+  - g(?:i|a)v(?:e|es|en|ing) rise to
+  - g(?:i|a)v(?:e|es|en|ing) grounds for
+  - ha(?:ve|s|d|ving) the effect of
+  - play(?:s|ed|ing)? a leading (?:part|role) in
+  - ma(?:k|d)(?:e|es|ing) itself felt
+  - t(?:ake|akes|ook|aking|aken) effect
+  - exhibit(?:s|ed|ing)? a tendency to
+  - serv(?:e|es|ed|ing) the purpose of
+  - in view of
+  - in the interests of
+  - on the hypothesis that
+  - greatly to be desired
+  - cannot be left out of account
+  - a development to be expected in the near future
+  - deserving of serious consideration
+  - brought to a satisfactory conclusion
+  - with respect to
+  - having regard to
+  - the fact that
+  - by dint of
+
+tests:
+  - name: fires
+    input: |
+      It gave rise to a quarrel, in view of the fact that he had left.
+    want: |
+      1:4:Orwell.FalseLimbs:Verbal false limb: 'gave rise to'. Cut it (Rule 3).
+      1:28:Orwell.FalseLimbs:Verbal false limb: 'in view of'. Cut it (Rule 3).
+      1:39:Orwell.FalseLimbs:Verbal false limb: 'the fact that'. Cut it (Rule 3).
+  - name: clean
+    input: |
+      It caused a quarrel, since he had left.
+    want: ""

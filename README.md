@@ -1,12 +1,14 @@
 # Fiction
 
 [Vale](https://vale.sh) styles for fiction: a core of the checks most
-editors agree on, and the rules of three writers who wrote theirs down.
+editors agree on, and the rules of four writers who wrote theirs down.
 [Elmore Leonard](https://www.theguardian.com/books/2010/feb/20/ten-rules-for-writing-fiction-part-one)'s
 ten rules, [Chuck Palahniuk](https://litreactor.com/essays/chuck-palahniuk/nuts-and-bolts-“thought”-verbs)'s
-thought verbs, and
+thought verbs,
 [William Strunk Jr.](https://www.gutenberg.org/ebooks/37134)'s 1918
-*Elements of Style*.
+*Elements of Style*, and
+[George Orwell](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/)'s
+six rules from "Politics and the English Language".
 
 Works on [Markdown](https://docs.vale.sh/formats/markdown),
 [plain text](https://docs.vale.sh/formats/text),
@@ -16,7 +18,7 @@ Works on [Markdown](https://docs.vale.sh/formats/markdown),
 
 ## Install
 
-Requires Vale 3.22.0 or later.
+Requires Vale 3.23.0 or later.
 
 ```ini
 StylesPath = styles
@@ -32,17 +34,20 @@ $ vale sync
 
 `Fiction` is in the [package library](https://vale.sh/explorer), so the
 name is enough. To pin a version, give a release URL instead:
-`https://github.com/jdkato/fiction/releases/download/v0.1.0/Fiction.zip`.
+`https://github.com/jdkato/fiction/releases/download/v0.2.0/Fiction.zip`.
 
 `Fiction` is also the core style and is always on. Add an author next to
-it.
+it, and `Narration` for a manuscript in the third person or the past
+tense.
 
 | Style | What it checks |
 | ----- | -------------- |
-| `Fiction` | Filter words, `began to`, told emotions, intensifiers, stock phrases, and dialogue punctuation. See below. |
+| `Fiction` | Filter words, `began to`, told emotions, intensifiers, stock phrases, dialogue punctuation, stiff and expository dialogue, action tags, participial openers, adjective stacks, mixed spellings and marks, and chapter openings and endings. See below. |
+| `Narration` | Slips in narration: a present-tense verb in a past-tense manuscript, a first-person pronoun in a third-person one. Turn off the rule that doesn't apply. |
 | `Leonard` | Six of the ten rules: no weather in the opening, no prologue, only `said`, no adverb on a tag, exclamation points capped, no `suddenly`, and dialect kept sparse. |
 | `Palahniuk` | Thought verbs: `thinks`, `knows`, `realizes`, `wants`, `remembers`, `loves`, `hates`, and the rest of the list. |
 | `Strunk` | Rules 10, 11, and 13 of *The Elements of Style*, and the Chapter V entries that name a replacement. |
+| `Orwell` | Four of the six rules: dying metaphors, pretentious diction, verbal false limbs and the `not un-` formation, and foreign phrases. |
 
 ### Core rules
 
@@ -53,8 +58,35 @@ it.
 | `TellingEmotion` | `felt sad`, `was so angry`, `looked nervous` |
 | `Intensifiers` | `very`, `really`, `quite`, `literally` |
 | `Cliches` | `heart pounded`, `a breath she didn't know she was holding`, `a chill ran down` |
+| `Participle` | `Walking to the door, she opened it` |
+| `Adjectives` | `a tall, dark, handsome stranger` |
+| `Beats` | more than 10 nods, shrugs, sighs, and smiles in a file |
 | `DialoguePunctuation` | `"I know", she said` |
 | `TagCase` | `"Run!" She said` |
+| `ActionTag` | `"Hello," she smiled`, `He nodded, "Fine."` |
+| `StiffDialogue` | `"I do not know"`, `"I am not going"` |
+| `AsYouKnow` | `"As you know, Bob,"`, `"As I told you,"` |
+| `Monologue` | one speech over 80 words |
+| `Variants` | `toward` and `towards` in the same file |
+| `Marks` | `"` and `“`, `'` and `’`, `...` and `…`, `--` and `—` in the same file |
+| `Waking` | `woke up`, `the alarm went off` in the paragraph after a heading |
+| `Cliffhanger` | a chapter whose last paragraph ends on `?` |
+
+The rules about speech, `StiffDialogue`, `AsYouKnow`, and `Monologue`,
+read only the text between quotation marks. The rules about narration,
+`FilterWords`, `TellingEmotion`, `Intensifiers`, and
+`Palahniuk.ThoughtVerbs`, read everything but.
+
+### Narration
+
+| Rule | Examples flagged |
+| ---- | ---------------- |
+| `PresentTense` | `she walks`, `he is` in narration |
+| `FirstPerson` | `I`, `my`, `we` in narration |
+
+Both read narration only, and `PresentTense` reads it by part of speech. A
+first-person manuscript turns off `FirstPerson`, and a present-tense one
+turns off `PresentTense`.
 
 ### Leonard
 
@@ -88,19 +120,35 @@ narration is fine, and `asked` is allowed.
 | `SplitInfinitive` | Chapter V | `to diligently inquire` |
 | `LikeAs` | Chapter V | `like in the old days` |
 
+### Orwell
+
+| Rule | Orwell's rule | Examples flagged |
+| ---- | ------------- | ---------------- |
+| `Metaphors` | 1. Never use a metaphor, simile, or other figure of speech which you are used to seeing in print. | `no axe to grind`, `swan song`, `toe the line` |
+| `Pretentious` | 2. Never use a long word where a short one will do. | `utilize`, `phenomenon`, `veritable`, `expedite` |
+| `FalseLimbs` | 3. If it is possible to cut a word out, always cut it out. | `give rise to`, `in view of`, `the fact that` |
+| `NotUn` | 3, from the essay's footnote. | `not unsmall` |
+| `Foreign` | 5. Never use a foreign phrase, a scientific word, or a jargon word if you can think of an everyday English equivalent. | `cul-de-sac`, `deus ex machina`, `status quo` |
+
+Each list is the essay's own. Rule 4, never use the passive where you can
+use the active, is `Std.Grammar.PassiveVoice` in
+[Std](https://github.com/vale-cli/Std). Rule 6, break any of these rules
+sooner than say anything outright barbarous, is yours.
+
 Every rule file starts with a comment quoting or paraphrasing the passage it
 comes from and links to the source.
 
 ## Configuration
 
 ```ini
-# A novel, one chapter per file
+# A novel, one chapter per file, in the first person
 [*.md]
-BasedOnStyles = Fiction, Leonard, Palahniuk
+BasedOnStyles = Fiction, Leonard, Palahniuk, Narration
+Narration.FirstPerson = NO
 
 # Essays and everything else
 [*.txt]
-BasedOnStyles = Fiction, Strunk
+BasedOnStyles = Fiction, Strunk, Orwell
 ```
 
 Limits are parameters, so you can change them without editing the rule:
@@ -108,27 +156,62 @@ Limits are parameters, so you can change them without editing the rule:
 ```ini
 Leonard.Exclamations[max] = 30
 Leonard.Dialect[max] = 50
+Fiction.Beats[max] = 40
+Fiction.Monologue[max] = 120
 Fiction.DialoguePunctuation = NO
+```
+
+So is a scope. `Cliffhanger` reads the last paragraph of each level-two
+section; for a manuscript with one chapter per file, point it at the last
+paragraph of the file:
+
+```ini
+Fiction.Cliffhanger[scope] = text & doc(p:last-of-type)
+```
+
+### Names
+
+Invented names trip the spell checker. If the built-in `Vale` style is on,
+list the characters and places in a
+[vocabulary](https://docs.vale.sh/topics/vocab) and `Vale.Spelling` accepts
+them:
+
+```
+styles/config/vocabularies/Names/accept.txt
+```
+
+```ini
+Vocab = Names
 ```
 
 ## Notes
 
-**Dialogue.** A rule cannot yet tell a quotation from narration, so
-`Palahniuk.ThoughtVerbs` and `Fiction.FilterWords` read a character's
-speech too. A dialogue scope is on Vale's roadmap; until then, expect a
-"she knew" inside quotation marks to be flagged.
+**Speech.** The text between quotation marks, curly, straight, or single,
+is speech. The rules about speech read only that, and the rules about
+narration leave it out, so a character may say "I know" and "very" without
+a note. An opening mark with no closing mark runs to the end of its
+paragraph, which is the convention for speech that continues into the next
+one. The rules that read a tag beside the mark, `Leonard.Said`,
+`Leonard.Adverb`, `ActionTag`, `TagCase`, and `DialoguePunctuation`, read
+both sides.
 
-**Openings.** `Leonard.Weather` reads the paragraph after the level-one
-heading. A file with no title heading, and any plain-text file, has no
-opening to check.
+**Openings and endings.** `Leonard.Weather` reads the paragraph after the
+level-one heading, and `Waking` the paragraph after any heading.
+`Cliffhanger` reads the last paragraph of each level-two section. A file
+with no heading, and any plain-text file, has no opening or chapter to
+check.
 
-**Counts.** `Leonard.Exclamations` and `Leonard.Dialect` count per file.
-Leonard's budget is two or three exclamation points per 100,000 words, so
-raise `max` for a whole novel in one file.
+**Counts.** `Leonard.Exclamations`, `Leonard.Dialect`, and `Beats` count
+per file. Leonard's budget is two or three exclamation points per 100,000
+words, so raise `max` for a whole novel in one file.
 
-**British punctuation.** `Fiction.DialoguePunctuation` wants the comma and
-period inside the closing quotation mark, which is the American convention.
-Turn it off for the other.
+**Consistency.** `Variants` and `Marks` don't prefer a form. Once a file
+has both, each paragraph that uses either is flagged, once, at its last
+use.
+
+**British punctuation.** `DialoguePunctuation` wants the comma and period
+inside the closing quotation mark, which is the American convention. Turn
+it off for the other.
 
 ## Tests
 

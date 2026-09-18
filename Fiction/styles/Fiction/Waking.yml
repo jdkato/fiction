@@ -1,0 +1,36 @@
+# A chapter that opens on a character waking up, or an alarm, or the light
+# through the curtains: the day hasn't started, and neither has the story.
+# The paragraph after any heading is an opening.
+extends: existence
+message: "Don't open a chapter with waking up: '%s'."
+level: suggestion
+scope: 'text & doc(h1 + p, h2 + p, h3 + p)'
+ignorecase: true
+tokens:
+  - 'wok(?:e|en)(?: up)?'
+  - 'wak(?:es|ing)(?: up)?'
+  - awoke
+  - awakened
+  - 'alarm(?: clock)? (?:went off|rang|buzzed|blared|sounded)'
+  - 'opened (?:his|her|their|my) eyes'
+  - '(?:sun|light|dawn|morning) (?:streamed|poured|crept|came|filtered|spilled) (?:in )?through'
+  - 'rolled (?:out of|over in) bed'
+
+tests:
+  - name: fires
+    input: |
+      # One
+
+      She woke up to the sound of rain.
+
+      Later, he woke too.
+    want: |
+      3:5:Fiction.Waking:Don't open a chapter with waking up: 'woke up'.
+  - name: clean
+    input: |
+      # One
+
+      The rain had been falling for a week.
+
+      Later, he woke too.
+    want: ""

@@ -1,0 +1,22 @@
+# "Hello," she smiled. A smile makes no sound, so it can't carry the line.
+# Make it a beat: "Hello." She smiled. Leonard.Said covers the verbs that
+# do make a sound and still aren't "said".
+extends: existence
+message: "'%s' can't speak a line. End the speech with a period and let the beat stand."
+level: warning
+nonword: true
+tokens:
+  - '(?<=,["”]\s)(?:\w+\s+){0,2}?(?:smiled|nodded|shrugged|grinned|frowned|winked|glared|blushed|shivered|gestured|pointed|waved|beamed|scowled|glanced|blinked|sniffed|flinched)\b'
+  - '\b(?:smiled|nodded|shrugged|grinned|frowned|winked|glared|blushed|shivered|gestured|pointed|waved|beamed|scowled|glanced|blinked|sniffed|flinched)(?=,?\s+["“])'
+
+tests:
+  - name: fires
+    input: |
+      "Hello," she smiled. She nodded, "Yes." "Fine." She shrugged.
+    want: |
+      1:10:Fiction.ActionTag:'she smiled' can't speak a line. End the speech with a period and let the beat stand.
+      1:26:Fiction.ActionTag:'nodded' can't speak a line. End the speech with a period and let the beat stand.
+  - name: clean
+    input: |
+      "Hello." She smiled. She nodded. "Yes." "Fine," she said, and shrugged.
+    want: ""

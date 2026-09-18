@@ -1,0 +1,23 @@
+# Three adjectives in front of one noun: the writer couldn't pick, so the
+# reader has to. Commas between them are allowed for, and a noun used as
+# an adjective, "stone house", isn't counted.
+extends: sequence
+message: "Three adjectives on one noun. Keep the one that does the work."
+level: suggestion
+tokens:
+  - tag: JJ
+    pattern: '\w+'
+    skip: 1
+    min: 3
+  - tag: NN|NNS
+
+tests:
+  - name: fires
+    input: |
+      A tall, dark, handsome stranger stood there.
+    want: |
+      1:3:Fiction.Adjectives:Three adjectives on one noun. Keep the one that does the work.
+  - name: clean
+    input: |
+      A tall stranger stood there. The old stone house stood empty.
+    want: ""

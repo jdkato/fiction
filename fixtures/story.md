@@ -17,3 +17,13 @@ She saw the door open and heard a step on the stair. She began to run, and her h
 There were a great number of dead leaves lying on the ground. He was not honest, and he did not remember the debt. He is a man who is very ambitious, owing to the fact that he left in a hasty manner. It was different than before, and most everybody had got used to it, like I did. It was certainly a very interesting factor. The roads were impassable. However, we reached camp. He wanted to diligently inquire.
 
 "Nothin' doin'," he said. "Ain't goin' nowhere, ain't comin' back, ain't stayin' or leavin' neither." Go! Now! Run! Faster!
+
+## Two
+
+She woke up to the sound of the alarm. "As you know, Bob, I am not going, and I do not care," she said. "Hello," he smiled. He nodded, "Fine."
+
+Walking to the door, she opened it. A tall, dark, handsome stranger stood there. She walked toward the door and then towards the window, and said “yes”. She walks to the door and I believed her.
+
+He had no axe to grind, in view of the fact that he had utilized a not unsmall cul-de-sac. She nodded. He shrugged. She sighed. He smiled. She grinned. He frowned. She winked. He blinked. She swallowed. He exhaled. She shook her head.
+
+"I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again, I told you before and I will tell you again," he said. Was the box empty?

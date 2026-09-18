@@ -1,0 +1,25 @@
+# Straight or curly, but not both. A manuscript pasted together from two
+# editors carries both kinds of quotation mark, both kinds of apostrophe,
+# a typed ellipsis beside the character, and a double hyphen beside the
+# dash. The first kind seen sets the expectation.
+extends: consistency
+message: "'%s' beside its other form. Use one kind of mark throughout."
+level: warning
+nonword: true
+either:
+  '"': '“'
+  "'": '’'
+  '\.\.\.': '…'
+  '--': '—'
+
+tests:
+  - name: fires
+    input: |
+      She said "no" and then she said “yes”. Wait... and then… gone.
+    want: |
+      1:33:Fiction.Marks:'“' beside its other form. Use one kind of mark throughout.
+      1:56:Fiction.Marks:'…' beside its other form. Use one kind of mark throughout.
+  - name: clean
+    input: |
+      She said "no" and then she said "yes". Wait... and then... gone.
+    want: ""

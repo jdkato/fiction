@@ -1,8 +1,10 @@
 # An emotion named is an emotion told. The reader is handed the label
-# instead of the clenched hand or the door left open.
+# instead of the clenched hand or the door left open. A character may
+# name her own feelings, so speech is left alone.
 extends: existence
 message: "Telling: '%s'. Show it in what the character does."
 level: suggestion
+scope: ~quote
 ignorecase: true
 tokens:
   - '(?:felt|feeling|was|were|looked|seemed|became|got) (?:so |very |really |a little |a bit )?(?:sad|happy|angry|mad|afraid|scared|frightened|nervous|anxious|worried|excited|furious|terrified|embarrassed|ashamed|surprised|shocked|confused|relieved|jealous|lonely|bored|annoyed|frustrated|disappointed|upset)'
@@ -18,4 +20,8 @@ tests:
   - name: clean
     input: |
       He put the photograph face down. She counted to ten.
+    want: ""
+  - name: speech
+    input: |
+      "I felt sad," she said.
     want: ""

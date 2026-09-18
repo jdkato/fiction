@@ -1,0 +1,36 @@
+# Rule 1: "Never use a metaphor, simile, or other figure of speech which
+# you are used to seeing in print." The essay's own list of dying
+# metaphors, "which have lost all evocative power and are merely used
+# because they save people the trouble of inventing phrases for
+# themselves." It notes that "toe the line" is sometimes written "tow".
+extends: existence
+message: "Dying metaphor: '%s' (Rule 1)."
+link: https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/
+level: suggestion
+ignorecase: true
+tokens:
+  - ring the changes on
+  - take up the cudgels? for
+  - to[ew] the line
+  - ride roughshod over
+  - stand shoulder to shoulder with
+  - play into the hands of
+  - no axe to grind
+  - grist to the mill
+  - fishing in troubled waters
+  - on the order of the day
+  - Achilles'? heel
+  - swan song
+  - hotbed
+
+tests:
+  - name: fires
+    input: |
+      He had no axe to grind, but it was his swan song.
+    want: |
+      1:8:Orwell.Metaphors:Dying metaphor: 'no axe to grind' (Rule 1).
+      1:40:Orwell.Metaphors:Dying metaphor: 'swan song' (Rule 1).
+  - name: clean
+    input: |
+      He wanted nothing from it, but it was the last thing he did.
+    want: ""

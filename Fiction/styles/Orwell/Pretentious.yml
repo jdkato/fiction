@@ -1,0 +1,57 @@
+# Rule 2: "Never use a long word where a short one will do." The essay's
+# "pretentious diction": words "used to dress up a simple statement and
+# give an air of scientific impartiality to biased judgements", the
+# adjectives that "dignify the sordid processes of international
+# politics", and the Latin and Greek words preferred to "their Anglo-Saxon
+# opposite numbers." "Element" and "individual" as nouns are on the list
+# too, and are left out here: a pattern can't tell the noun from the
+# adjective.
+extends: existence
+message: "Pretentious diction: '%s'. Use the plain word (Rule 2)."
+link: https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/
+level: suggestion
+ignorecase: true
+tokens:
+  - phenomen(?:on|a)
+  - objectives?
+  - categorical(?:ly)?
+  - effective(?:ly)?
+  - virtual(?:ly)?
+  - basic(?:ally)?
+  - primary
+  - promot(?:e|es|ed|ing)
+  - constitut(?:e|es|ed|ing)
+  - exhibit(?:s|ed|ing)?
+  - exploit(?:s|ed|ing)?
+  - utili[sz](?:e|es|ed|ing|ation)
+  - eliminat(?:e|es|ed|ing|ion)
+  - liquidat(?:e|es|ed|ing|ion)
+  - expedit(?:e|es|ed|ing)
+  - ameliorat(?:e|es|ed|ing)
+  - extraneous
+  - deracinated
+  - clandestine(?:ly)?
+  - subaqueous
+  - epoch-making
+  - epic
+  - historic
+  - unforgettable
+  - triumphant
+  - age-old
+  - inevitabl[ey]
+  - inexorabl[ey]
+  - veritable
+
+tests:
+  - name: fires
+    input: |
+      She utilized the veritable phenomenon to expedite it.
+    want: |
+      1:5:Orwell.Pretentious:Pretentious diction: 'utilized'. Use the plain word (Rule 2).
+      1:18:Orwell.Pretentious:Pretentious diction: 'veritable'. Use the plain word (Rule 2).
+      1:28:Orwell.Pretentious:Pretentious diction: 'phenomenon'. Use the plain word (Rule 2).
+      1:42:Orwell.Pretentious:Pretentious diction: 'expedite'. Use the plain word (Rule 2).
+  - name: clean
+    input: |
+      She used the thing to hurry it along.
+    want: ""

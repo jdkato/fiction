@@ -1,0 +1,33 @@
+# A chapter that ends on a question is the writer asking the reader to
+# keep going. Once is a hook; every chapter is a tic. The last paragraph
+# of each level-two section is read.
+extends: existence
+message: "The chapter ends on a question. Trust the reader to turn the page."
+level: suggestion
+scope: 'text & doc(section:has(> h2) > p:last-of-type)'
+nonword: true
+tokens:
+  - '\?["”]?\s*$'
+
+tests:
+  - name: fires
+    input: |
+      # Title
+
+      ## One
+
+      What was in the box?
+
+      ## Two
+
+      Was the box empty? It was.
+    want: |
+      5:20:Fiction.Cliffhanger:The chapter ends on a question. Trust the reader to turn the page.
+  - name: clean
+    input: |
+      # Title
+
+      ## One
+
+      What was in the box? Nobody asked.
+    want: ""

@@ -1,0 +1,20 @@
+# The body language that stands in for a reaction: a nod, a shrug, a sigh.
+# A few are invisible; a page of them is a tic. The count is per file.
+extends: occurrence
+message: "%d nods, shrugs, sighs, and smiles. Cut the beats that carry nothing."
+level: suggestion
+scope: summary
+ignorecase: true
+token: '\b(?:nodded|shrugged|sighed|smiled|grinned|frowned|winked|blinked|swallowed|exhaled|shook (?:his|her|their|my) head|raised (?:an|one|his|her|their|my) eyebrows?|ran (?:a|his|her|their|my) (?:hand|fingers) through|took a deep breath)\b'
+max: 10
+
+tests:
+  - name: fires
+    input: |
+      She nodded. He shrugged. She sighed. He smiled. She grinned. He frowned. She winked. He blinked. She swallowed. He exhaled. She shook her head.
+    want: |
+      1:5:Fiction.Beats:11 nods, shrugs, sighs, and smiles. Cut the beats that carry nothing.
+  - name: clean
+    input: |
+      She nodded. He shrugged. She said nothing for a while.
+    want: ""

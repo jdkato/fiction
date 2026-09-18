@@ -1,0 +1,55 @@
+# Speech contracts. "I do not know" is a character being formal, or a
+# writer being careful; most of the time it's the second, and it reads
+# stiff. Narration isn't spoken, so a formal narrator is fine.
+extends: existence
+message: "Contract '%s' in speech, unless the character is being formal."
+level: suggestion
+scope: quote
+ignorecase: true
+tokens:
+  - I am
+  - I have
+  - I will
+  - I would
+  - you are
+  - you will
+  - you would
+  - you have
+  - we are
+  - we will
+  - we have
+  - they are
+  - they will
+  - they have
+  - (?:s?he|it) is
+  - (?:s?he|it) will
+  - (?:s?he|it) would
+  - do not
+  - does not
+  - did not
+  - cannot
+  - can not
+  - could not
+  - would not
+  - should not
+  - will not
+  - is not
+  - are not
+  - was not
+  - were not
+  - have not
+  - has not
+  - had not
+  - must not
+
+tests:
+  - name: fires
+    input: |
+      "I am not going, and I do not care," she said. He did not answer.
+    want: |
+      1:2:Fiction.StiffDialogue:Contract 'I am' in speech, unless the character is being formal.
+      1:24:Fiction.StiffDialogue:Contract 'do not' in speech, unless the character is being formal.
+  - name: clean
+    input: |
+      "I'm not going, and I don't care," she said. He did not answer.
+    want: ""

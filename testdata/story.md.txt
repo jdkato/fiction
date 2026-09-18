@@ -15,7 +15,6 @@ fixtures/story.md:13:31:Leonard.Adverb:Drop the adverb on the tag: 'she softly r
 fixtures/story.md:13:31:Leonard.Said:Use 'said' to carry dialogue, not 'she softly replied'.
 fixtures/story.md:13:55:Leonard.Exclamations:5 exclamation points. Leonard allows two or three per 100,000 words.
 fixtures/story.md:13:58:Fiction.TagCase:Lowercase the tag: 'She said'.
-fixtures/story.md:13:71:Palahniuk.ThoughtVerbs:Unpack the thought verb 'know': show what the character does instead.
 fixtures/story.md:13:75:Fiction.DialoguePunctuation:Move the " inside the closing quotation mark.
 fixtures/story.md:15:5:Fiction.FilterWords:Filter word 'saw': cut it and show the thing itself.
 fixtures/story.md:15:27:Fiction.FilterWords:Filter word 'heard': cut it and show the thing itself.
@@ -34,9 +33,11 @@ fixtures/story.md:17:70:Strunk.Positive:Put it in positive form: 'dishonest' for
 fixtures/story.md:17:89:Strunk.Positive:Put it in positive form: 'forgot' for 'did not remember' (Rule 11).
 fixtures/story.md:17:97:Palahniuk.ThoughtVerbs:Unpack the thought verb 'remember': show what the character does instead.
 fixtures/story.md:17:116:Strunk.Needless:Omit needless words: 'he' for 'He is a man who' (Rule 13).
+fixtures/story.md:17:119:Narration.PresentTense:Present tense in narration: 'is'.
 fixtures/story.md:17:135:Fiction.Intensifiers:Intensifier 'very': find the stronger word instead.
 fixtures/story.md:17:135:Strunk.Hackneyed:Use sparingly; where emphasis is necessary, use words strong in themselves: 'very' (Chapter V).
 fixtures/story.md:17:151:Strunk.Needless:Omit needless words: 'since' for 'owing to the fact that' (Rule 13).
+fixtures/story.md:17:160:Orwell.FalseLimbs:Verbal false limb: 'the fact that'. Cut it (Rule 3).
 fixtures/story.md:17:160:Strunk.FactThat:Revise 'the fact that' out of the sentence (Rule 13).
 fixtures/story.md:17:182:Strunk.Needless:Omit needless words: 'hastily' for 'in a hasty manner' (Rule 13).
 fixtures/story.md:17:208:Strunk.Misused:Use 'different from' for 'different than' (Chapter V).
@@ -44,12 +45,48 @@ fixtures/story.md:17:235:Strunk.Misused:Use 'almost' for 'most everybody' (Chapt
 fixtures/story.md:17:250:Strunk.Misused:Use 'had' for 'had got' (Chapter V).
 fixtures/story.md:17:270:Strunk.LikeAs:Use 'as' before a clause, not 'like I did' (Chapter V).
 fixtures/story.md:17:270:Strunk.Misused:Use 'as' for 'like I did' (Chapter V).
+fixtures/story.md:17:275:Narration.FirstPerson:First person in narration: 'I'.
 fixtures/story.md:17:289:Strunk.Hackneyed:Used indiscriminately to intensify any and every statement: 'certainly' (Chapter V).
 fixtures/story.md:17:301:Fiction.Intensifiers:Intensifier 'very': find the stronger word instead.
 fixtures/story.md:17:301:Strunk.Hackneyed:Use sparingly; where emphasis is necessary, use words strong in themselves: 'very' (Chapter V).
 fixtures/story.md:17:306:Strunk.Hackneyed:Instead of announcing it, make it so: 'interesting' (Chapter V).
 fixtures/story.md:17:318:Strunk.Hackneyed:A hackneyed word; say it more directly: 'factor' (Chapter V).
 fixtures/story.md:17:353:Strunk.However:'However' meaning nevertheless should not come first in its sentence (Chapter V).
+fixtures/story.md:17:362:Narration.FirstPerson:First person in narration: 'we'.
 fixtures/story.md:17:382:Palahniuk.ThoughtVerbs:Unpack the thought verb 'wanted': show what the character does instead.
 fixtures/story.md:17:389:Strunk.SplitInfinitive:Split infinitive: 'to diligently inquire' (Chapter V).
 fixtures/story.md:19:2:Leonard.Dialect:6 phonetic spellings. Use dialect sparingly.
+fixtures/story.md:23:5:Fiction.Waking:Don't open a chapter with waking up: 'woke up'.
+fixtures/story.md:23:41:Fiction.AsYouKnow:'As you know' is exposition: the listener already knows.
+fixtures/story.md:23:59:Fiction.StiffDialogue:Contract 'I am' in speech, unless the character is being formal.
+fixtures/story.md:23:81:Fiction.StiffDialogue:Contract 'do not' in speech, unless the character is being formal.
+fixtures/story.md:23:114:Fiction.ActionTag:'he smiled' can't speak a line. End the speech with a period and let the beat stand.
+fixtures/story.md:23:117:Fiction.Beats:13 nods, shrugs, sighs, and smiles. Cut the beats that carry nothing.
+fixtures/story.md:23:128:Fiction.ActionTag:'nodded' can't speak a line. End the speech with a period and let the beat stand.
+fixtures/story.md:25:1:Fiction.Participle:The sentence opens on 'Walking'. Was the subject doing both at once?
+fixtures/story.md:25:39:Fiction.Adjectives:Three adjectives on one noun. Keep the one that does the work.
+fixtures/story.md:25:118:Fiction.Variants:'towards' beside its other form. Pick one and keep it.
+fixtures/story.md:25:147:Fiction.Marks:'“' beside its other form. Use one kind of mark throughout.
+fixtures/story.md:25:151:Fiction.DialoguePunctuation:Move the ” inside the closing quotation mark.
+fixtures/story.md:25:158:Narration.PresentTense:Present tense in narration: 'walks'.
+fixtures/story.md:25:180:Narration.FirstPerson:First person in narration: 'I'.
+fixtures/story.md:25:182:Palahniuk.ThoughtVerbs:Unpack the thought verb 'believed': show what the character does instead.
+fixtures/story.md:27:8:Orwell.Metaphors:Dying metaphor: 'no axe to grind' (Rule 1).
+fixtures/story.md:27:25:Orwell.FalseLimbs:Verbal false limb: 'in view of'. Cut it (Rule 3).
+fixtures/story.md:27:36:Orwell.FalseLimbs:Verbal false limb: 'the fact that'. Cut it (Rule 3).
+fixtures/story.md:27:36:Strunk.FactThat:Revise 'the fact that' out of the sentence (Rule 13).
+fixtures/story.md:27:57:Orwell.Pretentious:Pretentious diction: 'utilized'. Use the plain word (Rule 2).
+fixtures/story.md:27:68:Orwell.NotUn:Cure the 'not un-' formation: 'not unsmall' (Rule 3).
+fixtures/story.md:27:80:Orwell.Foreign:Foreign phrase: 'cul-de-sac'. Say it in English (Rule 5).
+fixtures/story.md:29:1:Fiction.Marks:'"' beside its other form. Use one kind of mark throughout.
+fixtures/story.md:29:2:Fiction.Monologue:90 words in one speech. Let someone answer, or break it up.
+fixtures/story.md:29:24:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
+fixtures/story.md:29:69:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
+fixtures/story.md:29:114:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
+fixtures/story.md:29:159:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
+fixtures/story.md:29:204:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
+fixtures/story.md:29:249:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
+fixtures/story.md:29:294:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
+fixtures/story.md:29:339:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
+fixtures/story.md:29:384:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
+fixtures/story.md:29:434:Fiction.Cliffhanger:The chapter ends on a question. Trust the reader to turn the page.

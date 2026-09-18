@@ -3,12 +3,12 @@
 # Believes, Wants, Remembers, Imagines, Desires, and a hundred others you
 # love to use. The list should also include: Loves and Hates." Thinking is
 # abstract; show the physical actions and details and let the reader do the
-# thinking. Dialogue is not exempt here, since a rule cannot yet tell a
-# quotation from narration.
+# thinking. Speech is exempt: a character may say what he thinks.
 extends: existence
 message: "Unpack the thought verb '%s': show what the character does instead."
 link: https://litreactor.com/essays/chuck-palahniuk/nuts-and-bolts-“thought”-verbs
 level: suggestion
+scope: ~quote
 ignorecase: true
 tokens:
   - think(?:s|ing)?
@@ -42,4 +42,8 @@ tests:
   - name: clean
     input: |
       The mornings after Kenny had stayed out, Monica put only her own cup in the microwave.
+    want: ""
+  - name: speech
+    input: |
+      "I know," she said. "I think so."
     want: ""

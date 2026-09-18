@@ -1,9 +1,11 @@
 # A perception verb between the reader and the scene: "she saw the door
 # open" reports the seeing; "the door opened" puts the reader in the room.
-# Point-of-view narration is the usual place for these.
+# Point-of-view narration is the usual place for these. Speech is left
+# alone: a character may say what she saw.
 extends: existence
 message: "Filter word '%s': cut it and show the thing itself."
 level: suggestion
+scope: ~quote
 ignorecase: true
 tokens:
   - saw
@@ -32,4 +34,8 @@ tests:
   - name: clean
     input: |
       The door opened. A step on the stair. Cold.
+    want: ""
+  - name: speech
+    input: |
+      "I saw the door open," she said.
     want: ""

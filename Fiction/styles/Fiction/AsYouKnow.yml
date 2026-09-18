@@ -1,0 +1,27 @@
+# Exposition through dialogue: one character tells another what both of
+# them already know, so the reader can overhear it. The tell is the
+# preface.
+extends: existence
+message: "'%s' is exposition: the listener already knows."
+level: warning
+scope: quote
+ignorecase: true
+tokens:
+  - as you (?:well |already |surely |may |must )?know
+  - as you(?:'ll| will| may)? (?:remember|recall)
+  - as (?:I|we)(?:'ve| have)? (?:told|explained to|reminded) you
+  - you(?:'ll| will)? remember (?:that|when|how)
+  - I(?:'m| am) sure you (?:know|remember|recall)
+  - as we both know
+
+tests:
+  - name: fires
+    input: |
+      "As you know, Bob, the reactor has three cores," she said. "As I told you, it leaks."
+    want: |
+      1:2:Fiction.AsYouKnow:'As you know' is exposition: the listener already knows.
+      1:61:Fiction.AsYouKnow:'As I told you' is exposition: the listener already knows.
+  - name: clean
+    input: |
+      "The reactor has three cores," she said. As you know, this is narration.
+    want: ""

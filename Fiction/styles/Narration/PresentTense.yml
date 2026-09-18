@@ -1,0 +1,25 @@
+# A past-tense manuscript that slips into the present: "she walks" on a
+# page where everyone else walked. Read by part of speech, in narration
+# only; speech is in whatever tense the character is in. Turn the rule off
+# for a manuscript narrated in the present.
+extends: sequence
+message: "Present tense in narration: '%[2]s'."
+level: warning
+scope: ~quote
+tokens:
+  - pattern: '(?i)\b(?:I|we|he|she|it|they)\b'
+    tag: PRP
+    skip: 1
+  - tag: VBZ|VBP
+    target: true
+
+tests:
+  - name: fires
+    input: |
+      She walks to the door. He was tired. "She is here," he said. She had run.
+    want: |
+      1:5:Narration.PresentTense:Present tense in narration: 'walks'.
+  - name: clean
+    input: |
+      She walked to the door. He was tired. "She is here," he said. She had run.
+    want: ""

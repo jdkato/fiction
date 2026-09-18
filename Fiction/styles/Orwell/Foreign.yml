@@ -1,0 +1,29 @@
+# Rule 5: "Never use a foreign phrase, a scientific word, or a jargon word
+# if you can think of an everyday English equivalent." The essay's
+# examples; "i.e., e.g., and etc." are the useful abbreviations it
+# excepts.
+extends: existence
+message: "Foreign phrase: '%s'. Say it in English (Rule 5)."
+link: https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/
+level: suggestion
+ignorecase: true
+tokens:
+  - cul[ -]de[ -]sac
+  - ancien r[ée]gime
+  - deus ex machina
+  - mutatis mutandis
+  - status quo
+  - gleichschaltung
+  - weltanschauung
+
+tests:
+  - name: fires
+    input: |
+      The street was a cul-de-sac, and the ending a deus ex machina.
+    want: |
+      1:18:Orwell.Foreign:Foreign phrase: 'cul-de-sac'. Say it in English (Rule 5).
+      1:47:Orwell.Foreign:Foreign phrase: 'deus ex machina'. Say it in English (Rule 5).
+  - name: clean
+    input: |
+      The street was a dead end, and the ending a cheat, i.e., a rescue.
+    want: ""

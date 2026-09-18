@@ -1,8 +1,10 @@
 # An intensifier weakens the word it leans on. "Very tired" is less tired
 # than "exhausted", and "really" is the writer asking to be believed.
+# People talk this way, so speech is left alone.
 extends: existence
 message: "Intensifier '%s': find the stronger word instead."
 level: suggestion
+scope: ~quote
 ignorecase: true
 tokens:
   - very
@@ -30,4 +32,8 @@ tests:
   - name: clean
     input: |
       She was exhausted and shivering.
+    want: ""
+  - name: speech
+    input: |
+      "I'm very tired," she said.
     want: ""

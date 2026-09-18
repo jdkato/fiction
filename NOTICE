@@ -16,8 +16,13 @@ Each rule links to its source. Sources and their terms:
   - Chuck Palahniuk, "Nuts and Bolts: 'Thought' Verbs", LitReactor, August
     12, 2013. The Palahniuk style takes its verb list from the essay, with a
     short quotation in the rule comment.
+  - George Orwell, "Politics and the English Language", Horizon, April
+    1946. The Orwell style implements four of the six rules, with the
+    essay's own lists of dying metaphors, verbal false limbs, pretentious
+    diction, and foreign phrases; each rule comment quotes the passage it
+    comes from.
 
-The core Fiction style is the package's own. Elmore Leonard, Chuck Palahniuk,
-and William Strunk Jr. are named as the authors of the advice the styles
-carry; this package is not endorsed by or affiliated with them or their
-estates.
+The core Fiction and Narration styles are the package's own. Elmore
+Leonard, Chuck Palahniuk, William Strunk Jr., and George Orwell are named
+as the authors of the advice the styles carry; this package is not endorsed
+by or affiliated with them or their estates.

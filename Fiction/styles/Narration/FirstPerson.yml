@@ -1,0 +1,27 @@
+# A first-person pronoun in third-person narration: the writer slipped in,
+# or a line of speech lost its quotation marks. Speech is exempt, and so
+# are headings, where a Roman numeral is an I. Turn the rule off for a
+# manuscript narrated in the first person.
+extends: existence
+message: "First person in narration: '%s'."
+level: warning
+scope: ~quote & ~heading
+tokens:
+  - '\bI\b'
+  - '(?i)\b(?:me|my|mine|myself|we|us|our|ours|ourselves)\b'
+
+tests:
+  - name: fires
+    input: |
+      # Chapter I
+
+      "I know," she said, and I believed her. My hands shook.
+    want: |
+      3:25:Narration.FirstPerson:First person in narration: 'I'.
+      3:41:Narration.FirstPerson:First person in narration: 'My'.
+  - name: clean
+    input: |
+      # Chapter I
+
+      "I know," she said, and he believed her. His hands shook.
+    want: ""
