@@ -1,0 +1,27 @@
+# The Hemingway Editor's yellow: a sentence "more complex than your target
+# readability score." The editor grades each sentence by its letters per
+# word and its words, and a sentence of fourteen or more words that grades
+# 10 through 13 is hard. A pattern can count words but not letters, so
+# this is the same line drawn by length alone: at the average of about
+# 4.7 letters a word, the grade crosses 10 near twenty words and 14 near
+# twenty-eight. Twenty to twenty-seven words is hard; VeryHardSentence
+# takes the rest.
+extends: existence
+message: "Hard to read: 20 or more words in one sentence. Split it, or trim it."
+link: https://hemingwayapp.com/help/docs/highlighted-issues
+level: suggestion
+scope: sentence
+nonword: true
+tokens:
+  - '^\W*(?:[\w''’-]+\W+){19,26}[\w''’-]+\W*$'
+
+tests:
+  - name: fires
+    input: |
+      He walked down to the harbor in the last of the light, past the boats and the sheds and the men who said nothing. The tide was out.
+    want: |
+      1:1:Hemingway.HardSentence:Hard to read: 20 or more words in one sentence. Split it, or trim it.
+  - name: clean
+    input: |
+      He walked down to the harbor in the last of the light, past the boats and the sheds. The men had nothing to say to him. The tide was out.
+    want: ""

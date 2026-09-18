@@ -1,0 +1,139 @@
+# The Hemingway Editor's blue: an adverb, "a description of a verb, like
+# 'quickly'", where a stronger verb would do the work alone. Any word
+# ending in -ly is read as one, less the adjectives and nouns that happen
+# to end the same way. Speech is left alone; people talk this way.
+extends: existence
+message: "Adverb '%s'. Find the verb that doesn't need it."
+link: https://hemingwayapp.com/help/docs/highlighted-issues
+level: suggestion
+scope: ~quote
+ignorecase: true
+tokens:
+  - '\w{2,}ly'
+exceptions:
+  - only
+  - early
+  - family
+  - reply
+  - apply
+  - supply
+  - comply
+  - imply
+  - rely
+  - multiply
+  - fly
+  - butterfly
+  - July
+  - Italy
+  - ugly
+  - holy
+  - unholy
+  - wholly
+  - belly
+  - jelly
+  - rally
+  - tally
+  - ally
+  - bully
+  - silly
+  - hilly
+  - chilly
+  - jolly
+  - folly
+  - holly
+  - dolly
+  - lily
+  - oily
+  - wily
+  - burly
+  - curly
+  - early
+  - surly
+  - pearly
+  - gnarly
+  - likely
+  - unlikely
+  - lively
+  - lovely
+  - lonely
+  - homely
+  - comely
+  - timely
+  - elderly
+  - orderly
+  - disorderly
+  - friendly
+  - unfriendly
+  - deadly
+  - deathly
+  - ghostly
+  - ghastly
+  - costly
+  - courtly
+  - portly
+  - sickly
+  - prickly
+  - kindly
+  - manly
+  - womanly
+  - motherly
+  - fatherly
+  - brotherly
+  - sisterly
+  - cowardly
+  - heavenly
+  - earthly
+  - worldly
+  - unworldly
+  - scholarly
+  - leisurely
+  - miserly
+  - beastly
+  - stately
+  - saintly
+  - sprightly
+  - unruly
+  - ungainly
+  - unsightly
+  - wobbly
+  - bubbly
+  - crumbly
+  - cuddly
+  - daily
+  - weekly
+  - monthly
+  - yearly
+  - hourly
+  - nightly
+  - assembly
+  - anomaly
+  - melancholy
+  - monopoly
+  - homily
+  - panoply
+  - Emily
+  - Molly
+  - Polly
+  - Sally
+  - Kelly
+  - Billy
+  - Willy
+  - Nelly
+  - Dolly
+  - Holly
+
+tests:
+  - name: fires
+    input: |
+      She walked slowly to the door and quietly opened it.
+    want: |
+      1:12:Hemingway.Adverbs:Adverb 'slowly'. Find the verb that doesn't need it.
+      1:35:Hemingway.Adverbs:Adverb 'quietly'. Find the verb that doesn't need it.
+  - name: clean
+    input: |
+      She crept to the door and eased it open. The family was lovely, and likely early.
+    want: ""
+  - name: speech
+    input: |
+      "Walk slowly," she said.
+    want: ""

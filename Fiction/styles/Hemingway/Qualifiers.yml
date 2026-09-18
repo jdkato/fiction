@@ -1,0 +1,56 @@
+# The Hemingway Editor's blue, with the adverbs and the passive: a
+# qualifier, "words like 'maybe' or 'I think' that make your writing sound
+# less confident." The narrator hedges; the reader wonders why. Speech is
+# left alone; a character may hedge all she likes.
+extends: existence
+message: "Qualifier '%s'. Cut it, or say the thing outright."
+link: https://hemingwayapp.com/help/docs/highlighted-issues
+level: suggestion
+scope: ~quote
+ignorecase: true
+tokens:
+  - maybe
+  - perhaps
+  - possibly
+  - probably
+  - apparently
+  - presumably
+  - supposedly
+  - seemingly
+  - arguably
+  - somewhat
+  - slightly
+  - fairly
+  - sort of
+  - kind of
+  - a bit
+  - a little
+  - more or less
+  - I think
+  - I believe
+  - I feel
+  - I guess
+  - I suppose
+  - in my opinion
+  - it seem(?:s|ed)
+  - it appear(?:s|ed)
+  - to some extent
+  - for the most part
+
+tests:
+  - name: fires
+    input: |
+      Perhaps he was sort of tired, and I think it seemed late.
+    want: |
+      1:1:Hemingway.Qualifiers:Qualifier 'Perhaps'. Cut it, or say the thing outright.
+      1:16:Hemingway.Qualifiers:Qualifier 'sort of'. Cut it, or say the thing outright.
+      1:35:Hemingway.Qualifiers:Qualifier 'I think'. Cut it, or say the thing outright.
+      1:43:Hemingway.Qualifiers:Qualifier 'it seemed'. Cut it, or say the thing outright.
+  - name: clean
+    input: |
+      He was tired, and it was late.
+    want: ""
+  - name: speech
+    input: |
+      "Maybe," she said. "I think so."
+    want: ""

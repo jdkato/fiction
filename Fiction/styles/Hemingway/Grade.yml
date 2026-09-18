@@ -1,0 +1,24 @@
+# The Hemingway Editor's readability score: "the average grade level
+# needed to understand a piece of writing", by the Automated Readability
+# Index, from letters per word and words per sentence. The editor's
+# default target is "grade 9 reading level, which is the average for
+# adults in the United States", and it holds up "novels for adults that
+# score at a 5th-grade reading level." The grade is per file.
+extends: metric
+message: "Reading grade %s. Aim for 9 or lower."
+link: https://hemingwayapp.com/help/docs/readability
+level: warning
+formula: |
+  (4.71 * (characters / words)) + (0.5 * (words / sentences)) - 21.43
+condition: "> 9"
+
+tests:
+  - name: fires
+    input: |
+      Notwithstanding the aforementioned considerations, the administration's interdepartmental reorganization initiative necessitated comprehensive reevaluation of institutional methodologies, organizational infrastructures, and jurisdictional responsibilities throughout the participating governmental establishments.
+    want: |
+      1:1:Hemingway.Grade:Reading grade 44.58. Aim for 9 or lower.
+  - name: clean
+    input: |
+      He went home. It was late. The door was shut, and he sat down on the step.
+    want: ""

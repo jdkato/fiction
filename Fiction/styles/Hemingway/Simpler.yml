@@ -1,0 +1,158 @@
+# The Hemingway Editor's purple: a word with "a simpler exact synonym",
+# "changing 'utilize' to 'use'." The pairs are from the United States
+# government's plain-language guidelines, "Use simple words and phrases",
+# less the entries that only a memo would contain. A substitution's first
+# %s is the swap's value, so the plain word leads. Speech is left alone; a
+# character who says "commence" is telling you something.
+extends: substitution
+message: "Use '%s' for '%s'."
+link: https://github.com/GSA/plainlanguage.gov/blob/main/_pages/guidelines/words/use-simple-words-phrases.md
+level: suggestion
+scope: ~quote
+ignorecase: true
+swap:
+  accompan(?:y|ies|ied|ying): go with
+  accomplish(?:es|ed|ing)?: carry out, do
+  accordingly: so
+  accurate: correct, exact, right
+  additional: added, more, other
+  adjacent to: next to
+  advantageous: helpful
+  anticipat(?:e|es|ed|ing): expect
+  a number of: some
+  apparent: clear, plain
+  approximately: about
+  ascertain(?:s|ed|ing)?: find out, learn
+  assist(?:s|ed|ing|ance)?: aid, help
+  attempt(?:s|ed|ing)?: try
+  at the present time: now
+  by means of: by, with
+  capability: ability
+  close proximity: near
+  commenc(?:e|es|ed|ing): begin, start
+  comply with: follow
+  component: part
+  concerning: about, on
+  consequently: so
+  consolidat(?:e|es|ed|ing): combine, join, merge
+  currently: now
+  deem(?:s|ed)?: believe, consider, think
+  demonstrat(?:e|es|ed|ing): prove, show
+  depart(?:s|ed|ing)?: leave
+  designat(?:e|es|ed|ing): appoint, choose, name
+  determin(?:e|es|ing): decide, figure, find
+  disclos(?:e|es|ed|ing): show
+  discontinu(?:e|es|ed|ing): drop, stop
+  due to the fact that: since
+  eliminat(?:e|es|ed|ing): cut, drop, end
+  encounter(?:s|ed|ing)?: meet
+  endeavo(?:u?r|u?rs|u?red|u?ring): try
+  ensur(?:e|es|ed|ing): make sure
+  enumerat(?:e|es|ed|ing): count
+  equitable: fair
+  evident: clear
+  exhibit(?:s|ed|ing)?: show
+  expedit(?:e|es|ed|ing): hasten, speed up
+  expeditious(?:ly)?: fast, quick
+  expend(?:s|ed|ing)?: spend
+  expertise: ability
+  facilitat(?:e|es|ed|ing): ease, help
+  failed to: didn't
+  feasible: workable
+  finaliz(?:e|es|ed|ing): complete, finish
+  for a period of: for
+  forfeit(?:s|ed|ing)?: give up, lose
+  frequently: often
+  identical: same
+  immediately: at once
+  in addition: also, besides, too
+  in an effort to: to
+  inasmuch as: since
+  in a timely manner: on time, promptly
+  inception: start
+  indicat(?:e|es|ed|ing): show
+  indication: sign
+  initial: first
+  initiat(?:e|es|ed|ing): start
+  in lieu of: instead
+  in order that: for, so
+  in order to: to
+  in regard to: about, concerning, on
+  in relation to: about, with, to
+  in the event of: if
+  in the near future: shortly, soon
+  in view of: since
+  it appears: it seems
+  magnitude: size
+  maintain(?:s|ed|ing)?: keep, support
+  maximum: greatest, largest, most
+  methodology: method
+  minimiz(?:e|es|ed|ing): decrease
+  minimum: least, smallest
+  modif(?:y|ies|ied|ying): change
+  monitor(?:s|ed|ing)?: check, watch
+  necessitat(?:e|es|ed|ing): cause, need
+  notif(?:y|ies|ied|ying): let know, tell
+  notwithstanding: in spite of, still
+  numerous: many
+  objective: aim, goal
+  observ(?:e|es|ed|ing): see
+  optimum: best
+  participat(?:e|es|ed|ing): take part
+  portion: part
+  possess(?:es|ed|ing)?: have, own
+  practicable: practical
+  preclud(?:e|es|ed|ing): prevent
+  previous: earlier
+  previously: before
+  prior to: before
+  proceed(?:s|ed|ing)?: go ahead
+  procur(?:e|es|ed|ing): buy
+  proficiency: skill
+  purchas(?:e|es|ed|ing): buy
+  regarding: about, of, on
+  relocat(?:e|es|ed|ing): move
+  remain(?:s|ed|ing)?: stay
+  remainder: rest
+  remuneration: pay
+  request(?:s|ed|ing)?: ask
+  resid(?:e|es|ed|ing): live
+  retain(?:s|ed|ing)?: keep
+  similar to: like
+  solicit(?:s|ed|ing)?: ask for
+  state-of-the-art: latest
+  subsequent: later, next
+  subsequently: after, later, then
+  substantial: large, much
+  sufficient: enough
+  terminat(?:e|es|ed|ing): end, stop
+  therefore: so
+  transmit(?:s|ted|ting)?: send
+  transpir(?:e|es|ed|ing): happen
+  until such time as: until
+  utili[sz](?:e|es|ed|ing|ation): use
+  validat(?:e|es|ed|ing): confirm
+  viable: workable
+  whereas: because, since
+  with reference to: about
+  with the exception of: except for
+  witnessed: saw
+
+tests:
+  - name: fires
+    input: |
+      He utilized the path in order to commence the journey, and subsequently remained.
+    want: |
+      1:4:Hemingway.Simpler:Use 'use' for 'utilized'.
+      1:22:Hemingway.Simpler:Use 'to' for 'in order to'.
+      1:34:Hemingway.Simpler:Use 'begin, start' for 'commence'.
+      1:60:Hemingway.Simpler:Use 'after, later, then' for 'subsequently'.
+      1:73:Hemingway.Simpler:Use 'stay' for 'remained'.
+  - name: clean
+    input: |
+      He used the path to begin the journey, and then stayed.
+    want: ""
+  - name: speech
+    input: |
+      "I shall commence," he said.
+    want: ""

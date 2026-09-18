@@ -1,14 +1,17 @@
 # Fiction
 
 [Vale](https://vale.sh) styles for fiction: a core of the checks most
-editors agree on, and the rules of four writers who wrote theirs down.
+editors agree on, the rules of four writers who wrote theirs down, and
+the checks of the [Hemingway Editor](https://hemingwayapp.com/).
 [Elmore Leonard](https://www.theguardian.com/books/2010/feb/20/ten-rules-for-writing-fiction-part-one)'s
 ten rules, [Chuck Palahniuk](https://litreactor.com/essays/chuck-palahniuk/nuts-and-bolts-“thought”-verbs)'s
 thought verbs,
 [William Strunk Jr.](https://www.gutenberg.org/ebooks/37134)'s 1918
 *Elements of Style*, and
 [George Orwell](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/)'s
-six rules from "Politics and the English Language".
+six rules from "Politics and the English Language". `Hemingway` is the
+editor's highlights as Vale rules: adverbs, passive voice, qualifiers,
+words with simpler alternatives, hard sentences, and the reading grade.
 
 Works on [Markdown](https://docs.vale.sh/formats/markdown),
 [plain text](https://docs.vale.sh/formats/text),
@@ -48,6 +51,7 @@ tense.
 | `Palahniuk` | Thought verbs: `thinks`, `knows`, `realizes`, `wants`, `remembers`, `loves`, `hates`, and the rest of the list. |
 | `Strunk` | Rules 10, 11, and 13 of *The Elements of Style*, and the Chapter V entries that name a replacement. |
 | `Orwell` | Four of the six rules: dying metaphors, pretentious diction, verbal false limbs and the `not un-` formation, and foreign phrases. |
+| `Hemingway` | The Hemingway Editor's highlights: adverbs, passive voice, qualifiers, words with simpler alternatives, sentences that are hard and very hard to read, and a reading grade for the file. |
 
 ### Core rules
 
@@ -74,8 +78,8 @@ tense.
 
 The rules about speech, `StiffDialogue`, `AsYouKnow`, and `Monologue`,
 read only the text between quotation marks. The rules about narration,
-`FilterWords`, `TellingEmotion`, `Intensifiers`, and
-`Palahniuk.ThoughtVerbs`, read everything but.
+`FilterWords`, `TellingEmotion`, `Intensifiers`, `Palahniuk.ThoughtVerbs`,
+and the four Hemingway word rules, read everything but.
 
 ### Narration
 
@@ -131,9 +135,32 @@ narration is fine, and `asked` is allowed.
 | `Foreign` | 5. Never use a foreign phrase, a scientific word, or a jargon word if you can think of an everyday English equivalent. | `cul-de-sac`, `deus ex machina`, `status quo` |
 
 Each list is the essay's own. Rule 4, never use the passive where you can
-use the active, is `Std.Grammar.PassiveVoice` in
-[Std](https://github.com/vale-cli/Std). Rule 6, break any of these rules
-sooner than say anything outright barbarous, is yours.
+use the active, is `Hemingway.PassiveVoice` below, or
+`Std.Grammar.PassiveVoice` in [Std](https://github.com/vale-cli/Std). Rule
+6, break any of these rules sooner than say anything outright barbarous, is
+yours.
+
+### Hemingway
+
+| Rule | The editor's highlight | Examples flagged |
+| ---- | ---------------------- | ---------------- |
+| `Adverbs` | Blue: adverbs | `walked slowly`, `quietly opened` |
+| `PassiveVoice` | Blue: passive voice | `was opened by`, `were being followed` |
+| `Qualifiers` | Blue: qualifiers | `perhaps`, `sort of`, `I think`, `it seemed` |
+| `Simpler` | Purple: words with simpler alternatives | `utilize`, `commence`, `in order to`, `subsequently` |
+| `HardSentence` | Yellow: hard to read | a sentence of 20 to 27 words |
+| `VeryHardSentence` | Red: very hard to read | a sentence of 28 words or more |
+| `Grade` | Readability | a file that reads above grade 9 |
+
+The editor grades each sentence by its letters per word and its words, and
+calls a sentence of fourteen words or more hard at grade 10 and very hard
+at grade 14. A pattern can count words but not letters, so the two sentence
+rules draw the same lines by length alone: at the average of about 4.7
+letters a word, grade 10 falls near twenty words and grade 14 near
+twenty-eight. `Grade` is the editor's Automated Readability Index over the
+whole file, against its default target of grade 9. The word lists are the
+package's own, except `Simpler`, which takes its pairs from the United
+States government's plain-language guidelines.
 
 Every rule file starts with a comment quoting or paraphrasing the passage it
 comes from and links to the source.
@@ -148,7 +175,7 @@ Narration.FirstPerson = NO
 
 # Essays and everything else
 [*.txt]
-BasedOnStyles = Fiction, Strunk, Orwell
+BasedOnStyles = Fiction, Strunk, Orwell, Hemingway
 ```
 
 Limits are parameters, so you can change them without editing the rule:
@@ -208,6 +235,11 @@ words, so raise `max` for a whole novel in one file.
 **Consistency.** `Variants` and `Marks` don't prefer a form. Once a file
 has both, each paragraph that uses either is flagged, once, at its last
 use.
+
+**Sentences.** `HardSentence` and `VeryHardSentence` read every sentence,
+speech included, and a sentence gets one note or the other, never both.
+Their limits are the editor's, and are not parameters; `Grade` reads the
+whole file and fires once.
 
 **British punctuation.** `DialoguePunctuation` wants the comma and period
 inside the closing quotation mark, which is the American convention. Turn

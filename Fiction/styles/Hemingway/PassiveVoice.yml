@@ -1,0 +1,72 @@
+# The Hemingway Editor's blue, with the adverbs: the passive voice, where
+# "events seem like they're happening to your subject." A form of "be"
+# followed by a past participle: "was seen", "were being followed". The
+# participles that have become adjectives, "was tired", "was married", are
+# left out, and so are the idioms "used to" and "supposed to". Speech is
+# left alone.
+extends: existence
+message: "Passive voice: '%s'. Say who did it."
+link: https://hemingwayapp.com/help/docs/highlighted-issues
+level: suggestion
+scope: ~quote
+ignorecase: true
+tokens:
+  - '\b(?:am|are|is|was|were|be|been|being)\s+(?:being\s+)?(?:\w+ly\s+)?(?!(?:used|supposed|going) to\b)(?:\w{2,}ed|awoken|beaten|begun|bent|bitten|blown|bought|bound|broken|brought|built|burnt|caught|chosen|cut|dealt|done|drawn|driven|eaten|fed|felt|flung|flown|forbidden|forgotten|forgiven|fought|found|frozen|given|hidden|held|hit|hung|hurt|kept|known|laid|learnt|led|left|lent|lit|lost|made|meant|met|mistaken|overcome|overthrown|paid|proven|put|read|ridden|said|seen|sent|set|sewn|shaken|shot|shown|shut|slain|sold|spent|split|spoken|spread|spun|stolen|struck|stung|sung|sunk|swept|sworn|swung|taken|taught|thrown|told|torn|trodden|understood|undone|woken|won|worn|wound|woven|written|wrung)\b'
+exceptions:
+  - tired
+  - exhausted
+  - excited
+  - interested
+  - bored
+  - worried
+  - scared
+  - surprised
+  - pleased
+  - married
+  - ashamed
+  - delighted
+  - frightened
+  - relieved
+  - satisfied
+  - disappointed
+  - determined
+  - embarrassed
+  - concerned
+  - confused
+  - convinced
+  - annoyed
+  - amused
+  - dressed
+  - seated
+  - naked
+  - wicked
+  - sacred
+  - wretched
+  - rugged
+  - jagged
+  - ragged
+  - crooked
+  - indeed
+  - aged
+  - beloved
+  - blessed
+  - hundred
+  - kindred
+  - hatred
+
+tests:
+  - name: fires
+    input: |
+      The door was opened by the wind. She was being followed, and the letter had been quietly taken.
+    want: |
+      1:10:Hemingway.PassiveVoice:Passive voice: 'was opened'. Say who did it.
+      1:38:Hemingway.PassiveVoice:Passive voice: 'was being followed'. Say who did it.
+      1:77:Hemingway.PassiveVoice:Passive voice: 'been quietly taken'. Say who did it.
+  - name: clean
+    input: |
+      The wind opened the door. She was tired, and indeed she was used to it. Someone followed her.
+    want: ""
+  - name: speech
+    input: |
+      "I was followed," she said.
+    want: ""

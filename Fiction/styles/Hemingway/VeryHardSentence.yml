@@ -1,0 +1,23 @@
+# The Hemingway Editor's red: a sentence "far more complex than your target
+# score", one of fourteen or more words that grades 14 or higher. Drawn by
+# length alone, as HardSentence explains, the line falls at twenty-eight
+# words.
+extends: existence
+message: "Very hard to read: 28 or more words in one sentence. Split it."
+link: https://hemingwayapp.com/help/docs/highlighted-issues
+level: warning
+scope: sentence
+nonword: true
+tokens:
+  - '^\W*(?:[\w''’-]+\W+){27,}[\w''’-]+\W*$'
+
+tests:
+  - name: fires
+    input: |
+      He walked down to the harbor in the last of the light, past the boats and the sheds and the men who had nothing to say to him, and he did not look at any of them. The tide was out.
+    want: |
+      1:1:Hemingway.VeryHardSentence:Very hard to read: 28 or more words in one sentence. Split it.
+  - name: clean
+    input: |
+      He walked down to the harbor in the last of the light, past the boats and the sheds and the men who said nothing. The tide was out.
+    want: ""

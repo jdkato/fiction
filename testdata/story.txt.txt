@@ -1,10 +1,12 @@
 fixtures/story.txt:1:58:Palahniuk.ThoughtVerbs:Unpack the thought verb 'wondered': show what the character does instead.
 fixtures/story.txt:1:78:Palahniuk.ThoughtVerbs:Unpack the thought verb 'realized': show what the character does instead.
+fixtures/story.txt:1:91:Hemingway.Adverbs:Adverb 'Suddenly'. Find the verb that doesn't need it.
 fixtures/story.txt:1:91:Leonard.Suddenly:Never use 'Suddenly'.
 fixtures/story.txt:1:101:Leonard.Suddenly:Never use 'all hell broke loose'.
 fixtures/story.txt:3:12:Leonard.Said:Use 'said' to carry dialogue, not 'she hissed'.
 fixtures/story.txt:3:27:Leonard.Said:Use 'said' to carry dialogue, not 'grumbled'.
 fixtures/story.txt:3:51:Leonard.Adverb:Drop the adverb on the tag: 'he said gravely'.
+fixtures/story.txt:3:59:Hemingway.Adverbs:Adverb 'gravely'. Find the verb that doesn't need it.
 fixtures/story.txt:3:75:Fiction.TagCase:Lowercase the tag: 'She said'.
 fixtures/story.txt:3:92:Fiction.DialoguePunctuation:Move the " inside the closing quotation mark.
 fixtures/story.txt:5:5:Fiction.FilterWords:Filter word 'saw': cut it and show the thing itself.
@@ -20,12 +22,14 @@ fixtures/story.txt:7:85:Narration.PresentTense:Present tense in narration: 'is'.
 fixtures/story.txt:7:101:Fiction.Intensifiers:Intensifier 'very': find the stronger word instead.
 fixtures/story.txt:7:101:Strunk.Hackneyed:Use sparingly; where emphasis is necessary, use words strong in themselves: 'very' (Chapter V).
 fixtures/story.txt:7:124:Strunk.Misused:Use 'different from' for 'different than' (Chapter V).
+fixtures/story.txt:7:154:Hemingway.Adverbs:Adverb 'certainly'. Find the verb that doesn't need it.
 fixtures/story.txt:7:154:Strunk.Hackneyed:Used indiscriminately to intensify any and every statement: 'certainly' (Chapter V).
 fixtures/story.txt:7:164:Strunk.Hackneyed:Instead of announcing it, make it so: 'interesting' (Chapter V).
 fixtures/story.txt:7:204:Strunk.However:'However' meaning nevertheless should not come first in its sentence (Chapter V).
 fixtures/story.txt:7:213:Narration.FirstPerson:First person in narration: 'we'.
 fixtures/story.txt:7:233:Palahniuk.ThoughtVerbs:Unpack the thought verb 'wanted': show what the character does instead.
 fixtures/story.txt:7:240:Strunk.SplitInfinitive:Split infinitive: 'to diligently inquire' (Chapter V).
+fixtures/story.txt:7:243:Hemingway.Adverbs:Adverb 'diligently'. Find the verb that doesn't need it.
 fixtures/story.txt:11:41:Fiction.AsYouKnow:'As you know' is exposition: the listener already knows.
 fixtures/story.txt:11:59:Fiction.StiffDialogue:Contract 'I am' in speech, unless the character is being formal.
 fixtures/story.txt:11:95:Fiction.ActionTag:'he smiled' can't speak a line. End the speech with a period and let the beat stand.
@@ -37,10 +41,21 @@ fixtures/story.txt:11:256:Fiction.DialoguePunctuation:Move the ” inside the cl
 fixtures/story.txt:11:263:Narration.PresentTense:Present tense in narration: 'walks'.
 fixtures/story.txt:11:285:Narration.FirstPerson:First person in narration: 'I'.
 fixtures/story.txt:11:287:Palahniuk.ThoughtVerbs:Unpack the thought verb 'believed': show what the character does instead.
+fixtures/story.txt:11:301:Hemingway.HardSentence:Hard to read: 20 or more words in one sentence. Split it, or trim it.
 fixtures/story.txt:11:308:Orwell.Metaphors:Dying metaphor: 'no axe to grind' (Rule 1).
+fixtures/story.txt:11:325:Hemingway.Simpler:Use 'since' for 'in view of'.
 fixtures/story.txt:11:325:Orwell.FalseLimbs:Verbal false limb: 'in view of'. Cut it (Rule 3).
 fixtures/story.txt:11:336:Orwell.FalseLimbs:Verbal false limb: 'the fact that'. Cut it (Rule 3).
 fixtures/story.txt:11:336:Strunk.FactThat:Revise 'the fact that' out of the sentence (Rule 13).
+fixtures/story.txt:11:357:Hemingway.Simpler:Use 'use' for 'utilized'.
 fixtures/story.txt:11:357:Orwell.Pretentious:Pretentious diction: 'utilized'. Use the plain word (Rule 2).
 fixtures/story.txt:11:368:Orwell.NotUn:Cure the 'not un-' formation: 'not unsmall' (Rule 3).
 fixtures/story.txt:11:380:Orwell.Foreign:Foreign phrase: 'cul-de-sac'. Say it in English (Rule 5).
+fixtures/story.txt:13:1:Hemingway.Qualifiers:Qualifier 'Perhaps'. Cut it, or say the thing outright.
+fixtures/story.txt:13:12:Hemingway.PassiveVoice:Passive voice: 'was followed'. Say who did it.
+fixtures/story.txt:13:40:Hemingway.Adverbs:Adverb 'slowly'. Find the verb that doesn't need it.
+fixtures/story.txt:13:48:Hemingway.VeryHardSentence:Very hard to read: 28 or more words in one sentence. Split it.
+fixtures/story.txt:13:169:Hemingway.Simpler:Use 'use' for 'utilized'.
+fixtures/story.txt:13:169:Orwell.Pretentious:Pretentious diction: 'utilized'. Use the plain word (Rule 2).
+fixtures/story.txt:13:187:Hemingway.Simpler:Use 'to' for 'in order to'.
+fixtures/story.txt:13:239:Hemingway.HardSentence:Hard to read: 20 or more words in one sentence. Split it, or trim it.

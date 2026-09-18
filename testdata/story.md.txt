@@ -5,14 +5,17 @@ fixtures/story.md:3:79:Fiction.TellingEmotion:Telling: 'felt sad'. Show it in wh
 fixtures/story.md:5:4:Leonard.Prologue:Avoid a prologue: it's backstory, and you can drop it in anywhere.
 fixtures/story.md:7:58:Palahniuk.ThoughtVerbs:Unpack the thought verb 'wondered': show what the character does instead.
 fixtures/story.md:7:78:Palahniuk.ThoughtVerbs:Unpack the thought verb 'realized': show what the character does instead.
+fixtures/story.md:7:91:Hemingway.Adverbs:Adverb 'Suddenly'. Find the verb that doesn't need it.
 fixtures/story.md:7:91:Leonard.Suddenly:Never use 'Suddenly'.
 fixtures/story.md:7:101:Leonard.Suddenly:Never use 'all hell broke loose'.
 fixtures/story.md:11:12:Leonard.Said:Use 'said' to carry dialogue, not 'she hissed'.
 fixtures/story.md:11:27:Leonard.Said:Use 'said' to carry dialogue, not 'grumbled'.
 fixtures/story.md:11:52:Leonard.Said:Use 'said' to carry dialogue, not 'Mary Ann asseverated'.
 fixtures/story.md:13:7:Leonard.Adverb:Drop the adverb on the tag: 'he said gravely'.
+fixtures/story.md:13:15:Hemingway.Adverbs:Adverb 'gravely'. Find the verb that doesn't need it.
 fixtures/story.md:13:31:Leonard.Adverb:Drop the adverb on the tag: 'she softly replied'.
 fixtures/story.md:13:31:Leonard.Said:Use 'said' to carry dialogue, not 'she softly replied'.
+fixtures/story.md:13:35:Hemingway.Adverbs:Adverb 'softly'. Find the verb that doesn't need it.
 fixtures/story.md:13:55:Leonard.Exclamations:5 exclamation points. Leonard allows two or three per 100,000 words.
 fixtures/story.md:13:58:Fiction.TagCase:Lowercase the tag: 'She said'.
 fixtures/story.md:13:75:Fiction.DialoguePunctuation:Move the " inside the closing quotation mark.
@@ -27,6 +30,7 @@ fixtures/story.md:15:153:Fiction.Cliches:Stock phrase: 'a chill ran down'.
 fixtures/story.md:15:189:Fiction.Intensifiers:Intensifier 'very': find the stronger word instead.
 fixtures/story.md:15:189:Strunk.Hackneyed:Use sparingly; where emphasis is necessary, use words strong in themselves: 'very' (Chapter V).
 fixtures/story.md:15:204:Fiction.Intensifiers:Intensifier 'really': find the stronger word instead.
+fixtures/story.md:15:204:Hemingway.Adverbs:Adverb 'really'. Find the verb that doesn't need it.
 fixtures/story.md:15:211:Fiction.Intensifiers:Intensifier 'quite': find the stronger word instead.
 fixtures/story.md:17:1:Strunk.ActiveVoice:Substitute a verb in the active voice for 'There were a great number of' (Rule 10).
 fixtures/story.md:17:70:Strunk.Positive:Put it in positive form: 'dishonest' for 'not honest' (Rule 11).
@@ -46,6 +50,7 @@ fixtures/story.md:17:250:Strunk.Misused:Use 'had' for 'had got' (Chapter V).
 fixtures/story.md:17:270:Strunk.LikeAs:Use 'as' before a clause, not 'like I did' (Chapter V).
 fixtures/story.md:17:270:Strunk.Misused:Use 'as' for 'like I did' (Chapter V).
 fixtures/story.md:17:275:Narration.FirstPerson:First person in narration: 'I'.
+fixtures/story.md:17:289:Hemingway.Adverbs:Adverb 'certainly'. Find the verb that doesn't need it.
 fixtures/story.md:17:289:Strunk.Hackneyed:Used indiscriminately to intensify any and every statement: 'certainly' (Chapter V).
 fixtures/story.md:17:301:Fiction.Intensifiers:Intensifier 'very': find the stronger word instead.
 fixtures/story.md:17:301:Strunk.Hackneyed:Use sparingly; where emphasis is necessary, use words strong in themselves: 'very' (Chapter V).
@@ -55,6 +60,7 @@ fixtures/story.md:17:353:Strunk.However:'However' meaning nevertheless should no
 fixtures/story.md:17:362:Narration.FirstPerson:First person in narration: 'we'.
 fixtures/story.md:17:382:Palahniuk.ThoughtVerbs:Unpack the thought verb 'wanted': show what the character does instead.
 fixtures/story.md:17:389:Strunk.SplitInfinitive:Split infinitive: 'to diligently inquire' (Chapter V).
+fixtures/story.md:17:392:Hemingway.Adverbs:Adverb 'diligently'. Find the verb that doesn't need it.
 fixtures/story.md:19:2:Leonard.Dialect:6 phonetic spellings. Use dialect sparingly.
 fixtures/story.md:23:5:Fiction.Waking:Don't open a chapter with waking up: 'woke up'.
 fixtures/story.md:23:41:Fiction.AsYouKnow:'As you know' is exposition: the listener already knows.
@@ -71,22 +77,34 @@ fixtures/story.md:25:151:Fiction.DialoguePunctuation:Move the ” inside the clo
 fixtures/story.md:25:158:Narration.PresentTense:Present tense in narration: 'walks'.
 fixtures/story.md:25:180:Narration.FirstPerson:First person in narration: 'I'.
 fixtures/story.md:25:182:Palahniuk.ThoughtVerbs:Unpack the thought verb 'believed': show what the character does instead.
+fixtures/story.md:27:1:Hemingway.HardSentence:Hard to read: 20 or more words in one sentence. Split it, or trim it.
 fixtures/story.md:27:8:Orwell.Metaphors:Dying metaphor: 'no axe to grind' (Rule 1).
+fixtures/story.md:27:25:Hemingway.Simpler:Use 'since' for 'in view of'.
 fixtures/story.md:27:25:Orwell.FalseLimbs:Verbal false limb: 'in view of'. Cut it (Rule 3).
 fixtures/story.md:27:36:Orwell.FalseLimbs:Verbal false limb: 'the fact that'. Cut it (Rule 3).
 fixtures/story.md:27:36:Strunk.FactThat:Revise 'the fact that' out of the sentence (Rule 13).
+fixtures/story.md:27:57:Hemingway.Simpler:Use 'use' for 'utilized'.
 fixtures/story.md:27:57:Orwell.Pretentious:Pretentious diction: 'utilized'. Use the plain word (Rule 2).
 fixtures/story.md:27:68:Orwell.NotUn:Cure the 'not un-' formation: 'not unsmall' (Rule 3).
 fixtures/story.md:27:80:Orwell.Foreign:Foreign phrase: 'cul-de-sac'. Say it in English (Rule 5).
-fixtures/story.md:29:1:Fiction.Marks:'"' beside its other form. Use one kind of mark throughout.
-fixtures/story.md:29:2:Fiction.Monologue:90 words in one speech. Let someone answer, or break it up.
-fixtures/story.md:29:24:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
-fixtures/story.md:29:69:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
-fixtures/story.md:29:114:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
-fixtures/story.md:29:159:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
-fixtures/story.md:29:204:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
-fixtures/story.md:29:249:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
-fixtures/story.md:29:294:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
-fixtures/story.md:29:339:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
-fixtures/story.md:29:384:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
-fixtures/story.md:29:434:Fiction.Cliffhanger:The chapter ends on a question. Trust the reader to turn the page.
+fixtures/story.md:29:1:Hemingway.Qualifiers:Qualifier 'Perhaps'. Cut it, or say the thing outright.
+fixtures/story.md:29:12:Hemingway.PassiveVoice:Passive voice: 'was followed'. Say who did it.
+fixtures/story.md:29:40:Hemingway.Adverbs:Adverb 'slowly'. Find the verb that doesn't need it.
+fixtures/story.md:29:48:Hemingway.VeryHardSentence:Very hard to read: 28 or more words in one sentence. Split it.
+fixtures/story.md:29:169:Hemingway.Simpler:Use 'use' for 'utilized'.
+fixtures/story.md:29:169:Orwell.Pretentious:Pretentious diction: 'utilized'. Use the plain word (Rule 2).
+fixtures/story.md:29:187:Hemingway.Simpler:Use 'to' for 'in order to'.
+fixtures/story.md:29:239:Hemingway.HardSentence:Hard to read: 20 or more words in one sentence. Split it, or trim it.
+fixtures/story.md:31:1:Fiction.Marks:'"' beside its other form. Use one kind of mark throughout.
+fixtures/story.md:31:1:Hemingway.VeryHardSentence:Very hard to read: 28 or more words in one sentence. Split it.
+fixtures/story.md:31:2:Fiction.Monologue:90 words in one speech. Let someone answer, or break it up.
+fixtures/story.md:31:24:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
+fixtures/story.md:31:69:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
+fixtures/story.md:31:114:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
+fixtures/story.md:31:159:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
+fixtures/story.md:31:204:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
+fixtures/story.md:31:249:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
+fixtures/story.md:31:294:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
+fixtures/story.md:31:339:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
+fixtures/story.md:31:384:Fiction.StiffDialogue:Contract 'I will' in speech, unless the character is being formal.
+fixtures/story.md:31:434:Fiction.Cliffhanger:The chapter ends on a question. Trust the reader to turn the page.
