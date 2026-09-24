@@ -1,0 +1,29 @@
+# Adverb density, a chapter at a time. Hemingway.Adverbs flags each one;
+# this counts them, so a chapter that leans on them is one alert rather than
+# forty. The ceiling is a count per chapter, not a rate: set it for the
+# chapter length you write. Speech counts, since the chapter is one block.
+extends: occurrence
+message: "%d adverbs in this chapter. Cut the ones the verb already carries."
+level: suggestion
+scope: 'doc(section:has(> h2))'
+max: 15
+token: '\b\w{2,}ly\b'
+
+tests:
+  - name: fires
+    input: |
+      # Title
+
+      ## One
+
+      He walked slowly, quietly, carefully, deliberately, and cautiously to the door, which opened suddenly, loudly, and violently onto a hallway that was eerily, strangely, unnaturally, and thoroughly, completely, utterly, and entirely dark, and he stepped in softly, finally.
+    want: |
+      5:11:Pacing.Adverbs:17 adverbs in this chapter. Cut the ones the verb already carries.
+  - name: clean
+    input: |
+      # Title
+
+      ## One
+
+      He walked to the door. It opened onto a dark hallway.
+    want: ""

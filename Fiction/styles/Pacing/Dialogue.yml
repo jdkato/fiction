@@ -1,0 +1,29 @@
+# The share of a chapter that is speech. A chapter with almost none is
+# narration the reader has to push through; one that is nearly all speech
+# floats. The ratio is quoted words to words, per level-two section, and the
+# band is wide: only the extremes are reported.
+extends: metric
+message: "%s percent of this chapter is dialogue. Most chapters sit between 20 and 70."
+level: suggestion
+scope: 'doc(section:has(> h2))'
+formula: round(100 * quote_words / words)
+condition: "< 20 && words >= 300 || result > 70 && words >= 300"
+
+tests:
+  - name: fires
+    input: |
+      # Title
+
+      ## One
+
+      He waited by the door all night, and nobody came. The rain kept on until morning, and the road stayed empty, and the light came up gray over the hills. He waited by the door all night, and nobody came. The rain kept on until morning, and the road stayed empty, and the light came up gray over the hills. He waited by the door all night, and nobody came. The rain kept on until morning, and the road stayed empty, and the light came up gray over the hills. He waited by the door all night, and nobody came. The rain kept on until morning, and the road stayed empty, and the light came up gray over the hills. He waited by the door all night, and nobody came. The rain kept on until morning, and the road stayed empty, and the light came up gray over the hills. He waited by the door all night, and nobody came. The rain kept on until morning, and the road stayed empty, and the light came up gray over the hills. He waited by the door all night, and nobody came. The rain kept on until morning, and the road stayed empty, and the light came up gray over the hills. He waited by the door all night, and nobody came. The rain kept on until morning, and the road stayed empty, and the light came up gray over the hills. He waited by the door all night, and nobody came. The rain kept on until morning, and the road stayed empty, and the light came up gray over the hills. He waited by the door all night, and nobody came. The rain kept on until morning, and the road stayed empty, and the light came up gray over the hills. He waited by the door all night, and nobody came. The rain kept on until morning, and the road stayed empty, and the light came up gray over the hills. He waited by the door all night, and nobody came. The rain kept on until morning, and the road stayed empty, and the light came up gray over the hills.
+    want: |
+      3:1:Pacing.Dialogue:0.00 percent of this chapter is dialogue. Most chapters sit between 20 and 70.
+  - name: too short to judge
+    input: |
+      # Title
+
+      ## One
+
+      He waited by the door all night, and nobody came.
+    want: ""

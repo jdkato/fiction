@@ -14,7 +14,8 @@ editor's highlights as Vale rules: adverbs, passive voice, qualifiers,
 words with simpler alternatives, hard sentences, and the reading grade.
 
 Works on [Markdown](https://docs.vale.sh/formats/markdown),
-[plain text](https://docs.vale.sh/formats/text),
+[plain text](https://docs.vale.sh/formats/text), where a line reading
+`Chapter One` or `Prologue` opens a chapter,
 [Org](https://docs.vale.sh/formats/org),
 [reStructuredText](https://docs.vale.sh/formats/restructuredtext), and
 [AsciiDoc](https://docs.vale.sh/formats/asciidoc).
@@ -52,6 +53,7 @@ tense.
 | `Strunk` | Rules 10, 11, and 13 of *The Elements of Style*, and the Chapter V entries that name a replacement. |
 | `Orwell` | Four of the six rules: dying metaphors, pretentious diction, verbal false limbs and the `not un-` formation, and foreign phrases. |
 | `Hemingway` | The Hemingway Editor's highlights: adverbs, passive voice, qualifiers, words with simpler alternatives, sentences that are hard and very hard to read, and a reading grade for the file. |
+| `Pacing` | A chapter at a time: sentence lengths that don't vary, adverbs by the dozen, and the share of the chapter that is dialogue. |
 
 ### Core rules
 
@@ -234,8 +236,11 @@ both sides.
 **Openings and endings.** `Leonard.Weather` reads the paragraph after the
 level-one heading, and `Waking` the paragraph after any heading.
 `Cliffhanger` reads the last paragraph of each level-two section, and
-`ChapterLength` and `Hemingway.ChapterGrade` the whole of it. A file with
-no heading, and any plain-text file, has no opening or chapter to check.
+`ChapterLength`, `Hemingway.ChapterGrade`, and the `Pacing` rules the whole
+of it. A plain-text manuscript has chapters when a line of its own reads
+`Chapter One`, `Prologue`, or a bare number, and a first short line before
+the first chapter is its title. A file with no heading has no opening or
+chapter to check.
 
 **Counts.** `Leonard.Exclamations`, `Leonard.Dialect`, and `Beats` count
 per file. Leonard's budget is two or three exclamation points per 100,000

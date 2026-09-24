@@ -1,0 +1,37 @@
+# Pace lives in the sentence lengths. A chapter whose sentences are all
+# about the same length reads flat, whatever the length; the short one after
+# the long one is where the beat lands. The standard deviation of words per
+# sentence measures the spread, over each level-two section.
+extends: metric
+message: "The sentences in this chapter vary by %s words. Vary the length more: a short one after a long one is a beat."
+level: suggestion
+scope: 'doc(section:has(> h2))'
+formula: round(sentence_length_sd, 1)
+condition: "< 4 && sentences >= 10"
+
+tests:
+  - name: fires
+    input: |
+      # Title
+
+      ## One
+
+      He went to the door. It was still shut. He tried the handle. It did not move. He stood there a while. The hall was very cold. He went back to bed. It was dark. He did not sleep. The morning came late.
+    want: |
+      3:1:Pacing.Variance:The sentences in this chapter vary by 1.10 words. Vary the length more: a short one after a long one is a beat.
+  - name: clean
+    input: |
+      # Title
+
+      ## One
+
+      He went to the door, and it was still shut, and when he tried the handle nothing moved, so he stood there a while in the cold of the hall. Nothing. He went back to bed and lay awake in the dark until the morning came, late and gray. Then he slept. It was the first sleep in days, and the last for a while. Cold. Still. He got up.
+    want: ""
+  - name: too short to judge
+    input: |
+      # Title
+
+      ## One
+
+      He went. He sat. He left.
+    want: ""
