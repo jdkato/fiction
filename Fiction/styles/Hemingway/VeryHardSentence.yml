@@ -6,8 +6,7 @@ message: "Very hard to read: grade %s. Split it."
 link: https://hemingwayapp.com/help/docs/highlighted-issues
 level: warning
 scope: sentence
-formula: |
-  math.floor((4.71 * (characters / words)) + (0.5 * words) - 21.43 + 0.5)
+formula: round(automated_readability)
 condition: ">= 14 && words >= 14"
 
 tests:

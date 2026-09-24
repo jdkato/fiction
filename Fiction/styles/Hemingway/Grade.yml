@@ -8,8 +8,7 @@ extends: metric
 message: "Reading grade %s. Aim for 9 or lower."
 link: https://hemingwayapp.com/help/docs/readability
 level: warning
-formula: |
-  (4.71 * (characters / words)) + (0.5 * (words / sentences)) - 21.43
+formula: automated_readability
 condition: "> 9"
 
 tests:

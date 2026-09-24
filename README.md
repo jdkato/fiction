@@ -21,10 +21,7 @@ Works on [Markdown](https://docs.vale.sh/formats/markdown),
 
 ## Install
 
-Requires Vale 3.23.0 or later. The rules that grade a sentence or measure
-a chapter, `Hemingway.HardSentence`, `Hemingway.VeryHardSentence`,
-`Hemingway.ChapterGrade`, and `ChapterLength`, need a Vale built from the
-`v3` branch until the next release.
+Requires Vale 3.23.0 or later.
 
 ```ini
 StylesPath = styles

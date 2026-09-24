@@ -2,15 +2,13 @@
 # readability score." The editor grades each sentence by the Automated
 # Readability Index, 4.71 times the letters per word, plus half the words,
 # less 21.43, rounded, and a sentence of fourteen words or more that grades
-# 10 through 13 is hard. The block is one sentence, so the words-per-
-# sentence term is the word count. VeryHardSentence takes grade 14 and up.
+# 10 through 13 is hard. VeryHardSentence takes grade 14 and up.
 extends: metric
 message: "Hard to read: grade %s. Split it, or trim it."
 link: https://hemingwayapp.com/help/docs/highlighted-issues
 level: suggestion
 scope: sentence
-formula: |
-  math.floor((4.71 * (characters / words)) + (0.5 * words) - 21.43 + 0.5)
+formula: round(automated_readability)
 condition: ">= 10 && result < 14 && words >= 14"
 
 tests:

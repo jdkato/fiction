@@ -7,8 +7,8 @@
 #
 # The rewrite is the load-bearing half. A Vale rule that matches nothing
 # loads, runs, and reports success, so "no alerts" only means something when
-# a paired fixture proves the rules fire. The last check makes that explicit:
-# every rule has a case that expects an alert.
+# a paired fixture proves the rules fire. `--coverage` makes that explicit:
+# every rule has to fire in some case.
 #
 # `./test.sh -u` rewrites the golden files instead of comparing.
 set -eu
@@ -22,7 +22,7 @@ vale=${VALE:-vale}
 mkdir -p "$root/testdata"
 
 # The in-source cases.
-(cd "$root" && "$vale" test Fiction/styles) || status=1
+(cd "$root" && "$vale" test --coverage Fiction/styles) || status=1
 
 # Alerts that share a line and column come back in whatever order the checks
 # ran, and that order is not part of the contract. Sorting compares the set.
@@ -56,22 +56,6 @@ for f in story.md story.txt; do
 		echo "ok   clean/$f (clean)"
 	fi
 done
-
-# Every rule has a case that expects an alert. A case that wants nothing
-# proves nothing on its own.
-missing=$(cd "$root/Fiction/styles" && for f in $(find . -name '*.yml' ! -path './config/*' | sort); do
-	if ! grep -q '^tests:' "$f" || ! sed -n '/^tests:/,$p' "$f" | grep -qE '^    (want: \|$|contains:)'; then
-		echo "$f" | sed 's|^\./||; s|/|.|; s|\.yml$||'
-	fi
-done)
-if [ -n "$missing" ]; then
-	echo "FAIL coverage: no case expects an alert from these rules"
-	printf '%s\n' "$missing" | sed 's/^/       /'
-	status=1
-else
-	n=$(cd "$root/Fiction/styles" && find . -name '*.yml' ! -path './config/*' | wc -l | tr -d ' ')
-	echo "ok   coverage ($n rules, every one exercised)"
-fi
 
 [ "$update" -eq 1 ] && echo "golden files rewritten"
 exit $status

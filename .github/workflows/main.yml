@@ -14,10 +14,7 @@ jobs:
       # for the transcribed rules travel inside it.
       - run: cp LICENSE NOTICE Fiction/
 
-      # GitHub serves the asset for `fiction.zip` too, and Vale looks for a
-      # directory named after the URL, so the archive carries both spellings.
-      - run: cp -r Fiction fiction
-      - run: zip -r Fiction.zip Fiction fiction -x "*.DS_Store"
+      - run: zip -r Fiction.zip Fiction -x "*.DS_Store"
 
       - name: Upload style to release
         uses: svenstaro/upload-release-action@v2
@@ -31,9 +28,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # The rules carry their cases in `tests:` blocks and one reads the
-      # opening paragraph with a `doc(...)` scope, both on Vale's v3 branch
-      # -- built from source so the suite runs against what ships next.
+      # The package needs Vale 3.23.0, which is on the v3 branch and not yet
+      # released -- built from source until it is.
       - uses: actions/checkout@v4
         with:
           repository: vale-cli/vale
