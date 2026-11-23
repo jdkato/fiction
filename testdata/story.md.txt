@@ -73,13 +73,13 @@ fixtures/story.md:23:117:Fiction.Beats:14 nods, shrugs, sighs, and smiles. Cut t
 fixtures/story.md:23:128:Fiction.ActionTag:'nodded' can't speak a line. End the speech with a period and let the beat stand.
 fixtures/story.md:25:1:Fiction.Participle:The sentence opens on 'Walking'. Was the subject doing both at once?
 fixtures/story.md:25:40:Fiction.Redundancy:Redundant: 'nodded his head'. The verb already says it.
-fixtures/story.md:25:59:Fiction.Adjectives:Three adjectives on one noun. Keep the one that does the work.
-fixtures/story.md:25:138:Fiction.Variants:'towards' beside its other form. Pick one and keep it.
-fixtures/story.md:25:167:Fiction.Marks:'“' beside its other form. Use one kind of mark throughout.
-fixtures/story.md:25:171:Fiction.DialoguePunctuation:Move the ” inside the closing quotation mark.
-fixtures/story.md:25:178:Narration.PresentTense:Present tense in narration: 'walks'.
-fixtures/story.md:25:200:Narration.FirstPerson:First person in narration: 'I'.
-fixtures/story.md:25:202:Palahniuk.ThoughtVerbs:Unpack the thought verb 'believed': show what the character does instead.
+fixtures/story.md:25:67:Fiction.Adjectives:Three adjectives on one noun. Keep the one that does the work.
+fixtures/story.md:25:131:Fiction.Variants:'towards' beside its other form. Pick one and keep it.
+fixtures/story.md:25:160:Fiction.Marks:'“' beside its other form. Use one kind of mark throughout.
+fixtures/story.md:25:164:Fiction.DialoguePunctuation:Move the ” inside the closing quotation mark.
+fixtures/story.md:25:171:Narration.PresentTense:Present tense in narration: 'walks'.
+fixtures/story.md:25:193:Narration.FirstPerson:First person in narration: 'I'.
+fixtures/story.md:25:195:Palahniuk.ThoughtVerbs:Unpack the thought verb 'believed': show what the character does instead.
 fixtures/story.md:27:8:Orwell.Metaphors:Dying metaphor: 'no axe to grind' (Rule 1).
 fixtures/story.md:27:25:Hemingway.Simpler:Use 'since' for 'in view of'.
 fixtures/story.md:27:25:Orwell.FalseLimbs:Verbal false limb: 'in view of'. Cut it (Rule 3).

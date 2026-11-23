@@ -14,9 +14,9 @@ tokens:
 tests:
   - name: fires
     input: |
-      A tall, dark, handsome stranger stood there.
+      He held a small, sharp, curved knife.
     want: |
-      1:3:Fiction.Adjectives:Three adjectives on one noun. Keep the one that does the work.
+      1:11:Fiction.Adjectives:Three adjectives on one noun. Keep the one that does the work.
   - name: clean
     input: |
       A tall stranger stood there. The old stone house stood empty.

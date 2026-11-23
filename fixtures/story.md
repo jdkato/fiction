@@ -22,7 +22,7 @@ There were a great number of dead leaves lying on the ground. He was not honest,
 
 She woke up to the sound of the alarm. "As you know, Bob, I am not going, and I do not care," she said. "Hello," he smiled. He nodded, "Fine."
 
-Walking to the door, she opened it. He nodded his head. A tall, dark, handsome stranger stood there. She walked toward the door and then towards the window, and said “yes”. She walks to the door and I believed her.
+Walking to the door, she opened it. He nodded his head. He held a small, sharp, curved knife. She walked toward the door and then towards the window, and said “yes”. She walks to the door and I believed her.
 
 He had no axe to grind, in view of the fact that he had utilized a not unsmall cul-de-sac. She nodded. He shrugged. She sighed. He smiled. She grinned. He frowned. She winked. He blinked. She swallowed. He exhaled. She shook her head.
 
